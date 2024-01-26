@@ -74,5 +74,6 @@ USER root
 # VOLUME ["/var/www/html"]
 
 # ENTRYPOINT ["/entrypoint.sh"]
-CMD ["apache2-foreground"]
+# CMD ["apache2-foreground"]
 # CMD ["sh", "-c", "cron && apache2-foreground"]
+CMD sed -i "s/80/$PORT/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf && docker-php-entrypoint apache2-foreground
