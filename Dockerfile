@@ -62,7 +62,7 @@ RUN curl -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/${GR
     rm grav-admin.zip
 
 # Create cron job for Grav maintenance scripts
-RUN (crontab -l; echo "* * * * * cd /var/www/html;/usr/local/bin/php bin/grav scheduler 1>> /dev/null 2>&1") | crontab -
+# RUN (crontab -l; echo "* * * * * cd /var/www/html;/usr/local/bin/php bin/grav scheduler 1>> /dev/null 2>&1") | crontab -
 
 # Return to root user
 USER root
@@ -74,5 +74,5 @@ USER root
 VOLUME ["/var/www/html"]
 
 # ENTRYPOINT ["/entrypoint.sh"]
-# CMD ["apache2-foreground"]
-CMD ["sh", "-c", "cron && apache2-foreground"]
+CMD ["apache2-foreground"]
+# CMD ["sh", "-c", "cron && apache2-foreground"]
