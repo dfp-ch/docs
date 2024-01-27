@@ -1,10 +1,10 @@
-title: Grav Documentation
+title: dfp Technical Documentation
 metadata:
-    description: 'Grav documentation'
+    description: 'dfp technical documentation'
 
 author:
-  name: Andy Miller
-  email: 'andy@getgrav.org'
+  name: Hannes Brunner
+  email: 'hannes.brunner@dfp.ch'
 
 taxonomies: [category,tag]
 summary:

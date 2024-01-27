@@ -1,5 +1,5 @@
 home:
-  alias: '/basics'
+  alias: '/home'
 
 pages:
   theme: learn4
