@@ -9,6 +9,8 @@
     {% include 'partials/breadcrumbs.html.twig' %}
   {% endif %}
 
+  {% embed 'partials/tntsearch.html.twig' with { limit: 10, snippet: 150, min: 3, search_type: 'auto', dropdown: true } %}{% endembed %}
+
   <div id="navigation">
     {% if theme_var('github.link') %}
       {% include 'partials/github-link.html.twig' %}

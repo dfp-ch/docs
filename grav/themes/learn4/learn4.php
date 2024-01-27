@@ -71,7 +71,7 @@ class Learn4 extends Theme
         if (in_array($color, ['purple', 'green', 'blue', 'contrast'])) {
             setcookie("sidebar-pref", $color, 0, '/');
         } else {
-            $color = filter_input(INPUT_COOKIE, 'sidebar-pref') ?: 'purple';
+            $color = filter_input(INPUT_COOKIE, 'sidebar-pref') ?: 'contrast';
         }
 
         $twig->twig_vars['sidebar_color'] = "sidebar-$color";

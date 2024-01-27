@@ -2,22 +2,21 @@
 
 <div class="learn-brand">
     <div id="header">
-        <a id="logo" href="{{ theme_config.home_url ?: base_url_absolute }}">{% include 'partials/logo.html.twig' %}</a>
+        <a id="logo" href="{{ theme_config.home_url ?: base_url_absolute }}" style="margin: 0">{% include 'partials/logo.html.twig' %}</a>
+{#
         <div class="searchbox-container">
             <div
               class="searchbox"
               data-algolia-pro-trigger
             >
                 <label for="search-by"><i class="fa fa-search"></i></label>
-                <input id="search-by" type="text" placeholder="{{ 'THEME_LEARN4_SEARCH_DOCUMENTATION'|t }}" readonly>
-                <span class="search-shortcode">
-                    {{ grav.browser.platform|starts_with('mac') ? '⌘K' : '<small>CTRL + K</small>' }}
-                </span>
+                {% embed 'partials/tntsearch.html.twig' with { limit: 10, snippet: 150, min: 3, search_type: 'auto', dropdown: true } %}{% endembed %}
             </div>
             <div class="search-options">
                 {% include 'partials/versions.html.twig' %}
             </div>
         </div>
+#}
     </div>
 </div>
 <div class="learn-nav" data-simplebar>
