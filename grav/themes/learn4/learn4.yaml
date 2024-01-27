@@ -4,8 +4,8 @@ grid-size: grid-lg
 github:
   note: true
   link: true
-  tree: https://github.com/getgrav/grav-learn/blob/develop/
-  commits: https://github.com/getgrav/grav-learn/commits/develop/
+  tree: https://github.com/dfp-ch/dfp-docs/blob/main/
+  commits: https://github.com/dfp-ch/dfp-docs/commits/main/
 spectre:
   exp: false
   icons: false
