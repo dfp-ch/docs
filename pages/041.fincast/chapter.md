@@ -1,5 +1,5 @@
 ---
-title: fincast library
+title: fincast
 taxonomy:
     category: docs
 ---

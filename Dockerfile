@@ -89,6 +89,7 @@ RUN bin/gpm install shortcode-ui
 RUN bin/gpm install youtube
 RUN bin/gpm install prism-highlight
 RUN bin/gpm install tntsearch
+RUN bin/gpm install presentation
 
 # Copy content
 COPY --chown=www-data:www-data pages/ /var/www/html/user/pages
