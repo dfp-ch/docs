@@ -92,7 +92,7 @@ RUN bin/gpm install tntsearch
 RUN bin/gpm install presentation
 
 # Copy content
-COPY --chown=www-data:www-data pages/ /var/www/html/user/pages
+# COPY --chown=www-data:www-data pages/ /var/www/html/user/pages
 
 # Index pages for search
 RUN bin/plugin tntsearch index
@@ -112,4 +112,13 @@ USER root
 # ENTRYPOINT ["/entrypoint.sh"]
 # CMD ["apache2-foreground"]
 # CMD ["sh", "-c", "cron && apache2-foreground"]
-CMD sed -i "s/80/${PORT:-80}/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf && docker-php-entrypoint apache2-foreground
+CMD sed -i "s/80/${PORT:-80}/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf
+
+# Copy the startup script
+COPY startup.sh /startup.sh
+
+# Make the script executable
+RUN chmod +x /startup.sh
+
+# Set the script as the entry point
+ENTRYPOINT ["/startup.sh"]

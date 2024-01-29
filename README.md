@@ -1,4 +1,11 @@
 
+# Run server locally
+
+In project folder (will map `pages` folder to `/var/www/html/user/pages`):
+
+`docker compose up -d` // --build if you want to force Dockerfile build
+
+
 # Installation
 
 ## Apache Crash I (docker image problem?)

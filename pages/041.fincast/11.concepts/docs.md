@@ -87,7 +87,7 @@ Currently fincast supports the following __Product (Holding) Hierarchy__
 	* _Asset_ (positive value)
 		* _Financial Asset_
 			* __Investment__ (with contribution plan, cash/bond/stock part, withdrawal plan)
-			* __ChPillarTwoCapital__
+			* __ChPillarTwoCapital__ (*)
 		* _Real Asset_
 			* __Real Estate__
 			* __Tangible Asset__ (depreciating, appreciating)
@@ -98,9 +98,11 @@ Currently fincast supports the following __Product (Holding) Hierarchy__
 	* __Expense__
 	* _Swiss Retirement Product_
 		* __ChPillarOne__
-		* __ChPillarTwoPension__
+		* __ChPillarTwoPension__ (*)
 	* _Swiss Taxes_
 		* __ChTax__
+
+(*) need to be reconsidered, might be Investment as well.
 
 
 ## Booking and Projection Listeners
