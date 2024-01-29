@@ -6,6 +6,7 @@ taxonomy:
 
 ## Some principles
 * core engine must be "context free" (dont pollute it with taxes, reports specifics, etc)
+* on the client, we want to be flexible in terms of what we want to model, and how we want to model it (which implies that the core engine should support simple building blocks to accomodate)
 * handle jurisdiction and application specifics as much as possible outside of core engine
 * we only want to model the minimal set of __structurally__ different products.
   we want to avoid to model an investment account separatly from an pillar 3a account, because they are structurally the same.
@@ -23,19 +24,35 @@ taxonomy:
 ![timeline](timeline.jpg)
 
 
-## Household entities
+## Basics: Time and Money resolution
+
+* SimDate has a monthly time resolution
+* Double for amounts, we are not doing bookkeeping to the cent
+
+
+## Household Structure
 * Household (with partner1 and optional partner2, children)
 * Person
 * Dependent (child) (nyi)
 * Holding (no product entity)
 * internal Cash (sum of all bank accounts)
-* external Cash
+* external Cash (created by fincast)
 
 
-## Basics: Time and Money resolution
+## Holding Structure
 
-* SimDate has a monthly time resolution
-* Double for amounts, we are not doing bookkeeping to the cent
+Before we dive into rebalancing, we need to introduce the general structure of holdings and the concept of __buffer assets__.
+Buffer assets are typically investment accounts, but can be any other asset that is a. liquid and b. not earmarked for a specific purpose.
+These are the assets we would use to cover a negative cashflow in the year, but which can also be filled through positive cashflow.
+
+Holding granularity for Projection, this is a mixture of what is mandated by fincast and what is domain model convention:
+* __external Cash__ (mandated by __fincast__): placeholder for all external cash holdings
+* __internal Cash__ (mandated by __fincast__): all non-dedicated (see below) cash holdings are aggregated into one internal cash holding
+* dedicated holdings (account or investments, anything possible acctually)
+  * regulated retirement provision products (AHV, BVG, 3a)
+  * large and/or illiquid assets (real estate) and liabilites (mortgage)
+  * client mandated buckets (f.ex. "my whisky collection"), these buckets are supposed to be linked to a specific goal or concern, i.e. not to be used for general rebalancing
+* __buffer asset(s)__: one (or more, linked by weights) investment account(s) that are used to buffer excess cash
 
 
 ## Result
@@ -65,26 +82,25 @@ For example, a salary (income) holding will trigger monthly bookings from extern
 
 Currently fincast supports the following __Product (Holding) Hierarchy__
 
-* _Valuable_
-	* _Asset_
+* _Valuable_ (holdings that have a - positive or negative - value)
+	* __Bank Account__ (checking, savings, CH vested benefits account)
+	* _Asset_ (positive value)
 		* _Financial Asset_
-			* __Bank Account__ (checking, savings, CH vested benefits account)
 			* __Investment__ (with contribution plan, cash/bond/stock part, withdrawal plan)
 			* __ChPillarTwoCapital__
 		* _Real Asset_
 			* __Real Estate__
 			* __Tangible Asset__ (depreciating, appreciating)
-	* _Liability_
+	* _Liability_ (negative value)
 		* __Liability__
-* _Contract_
-	* __Expense__
+* _Contract_ (holdings that only generate value flows)
 	* __Income__
+	* __Expense__
 	* _Swiss Retirement Product_
 		* __ChPillarOne__
 		* __ChPillarTwoPension__
 	* _Swiss Taxes_
 		* __ChTax__
-		* __ChAlimony__ (nyi)
 
 
 ## Booking and Projection Listeners
@@ -98,6 +114,14 @@ The booking listeners can then do internal calculations, f.ex. do an accumulatio
 How do we now differentiate between an investment account and a pillar 3a account for tax purposes?
 
 Enter `taxCode: String` on `Holding`.
+
+Currently supported tax codes from `ChTax` are:
+* SalaryPrimary (ESTV detail, triggers primary deductions)
+* SalarySecondary (ESTV detail, triggers secondary deductions)
+* ExpenseRent (deduction)
+* ExpenseAlimonyMinor (deduction)
+* ExpenseAlimonyAdult (deduction)
+* Investment3a (deduction)
 
 
 ## Reports (Cashflow Statement, Balance Sheet, P&L Statement, ...)
@@ -127,13 +151,9 @@ Bookings in phase 1 to 3 are either
 * __contractually fixed__ flows, f.ex. contribution to an insurance-linked pillar 3a product (where payment is mandatory), or payout of a pillar 3a account at the end of the savings period
 * or __individual discretionary and "manual"__ bookings, f.ex. "buying a house" or "payment into my pillar 2 account" (through goals or measures)
 
-Before we dive into rebalancing, we need to introduce the concept of __buffer assets__.
-Buffer assets are typically investment accounts, but can be any other asset that is a. liquid and b. not earmarked for a specific purpose.
-These are the assets we would use to cover a negative cashflow in the year, but which can also be filled through positive cashflow.
-
 In contrast, in phase 4 __EOY Rebalancing__, we do __automatic but voluntary__ rebalancing of holdings.
 This is done in 4 steps, but depends on whether we have a positive or negative free cashflow in the year (see below):
-1. do some defined fixed transfers (f.ex. "transfer the yearly max amout to my 3a account")
+1. unconditional transfers (f.ex. "transfer the yearly max amout to my 3a account")
 2. ensure minimum liquidity on internalCash (f.ex. 3 months of expenses)
 3. handle liquidity overflow or shortfall:
    * distribute positive free cashflow to "buffer assets"
