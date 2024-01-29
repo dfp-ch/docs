@@ -10,7 +10,16 @@ if [ -n "$DYNO" ]; then
     git clone ${REPO_URL} ${PAGES_DIR}
 fi
 
+chown -R www-data:www-data ${PAGES_DIR}
+
+# Index the documentation
 /var/www/html/bin/plugin tntsearch index
+
+# Set the port
+echo $PORT
+echo ${PORT:-80}
+
+sed -i "s/80/${PORT:-80}/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf
 
 # Start Apache in the foreground
 docker-php-entrypoint apache2-foreground
