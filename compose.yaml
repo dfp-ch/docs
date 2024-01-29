@@ -4,4 +4,4 @@ services:
     ports:
       - "4000:80"
     volumes:
-      - ./pages:/var/www/html/user/pages
+      - .:/var/www/html/user/pages
