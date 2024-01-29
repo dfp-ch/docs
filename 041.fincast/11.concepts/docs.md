@@ -35,24 +35,18 @@ taxonomy:
 * Person
 * Dependent (child) (nyi)
 * Holding (no product entity)
-* internal Cash (sum of all bank accounts)
-* external Cash (created by fincast)
 
 
-## Holding Structure
+## Holding Granularity
 
-Before we dive into rebalancing, we need to introduce the general structure of holdings and the concept of __buffer assets__.
-Buffer assets are typically investment accounts, but can be any other asset that is a. liquid and b. not earmarked for a specific purpose.
-These are the assets we would use to cover a negative cashflow in the year, but which can also be filled through positive cashflow.
-
-Holding granularity for Projection, this is a mixture of what is mandated by fincast and what is domain model convention:
-* __external Cash__ (mandated by __fincast__): placeholder for all external cash holdings
-* __internal Cash__ (mandated by __fincast__): all non-dedicated (see below) cash holdings are aggregated into one internal cash holding
-* dedicated holdings (account or investments, anything possible acctually)
-  * regulated retirement provision products (AHV, BVG, 3a)
-  * large and/or illiquid assets (real estate) and liabilites (mortgage)
-  * client mandated buckets (f.ex. "my whisky collection"), these buckets are supposed to be linked to a specific goal or concern, i.e. not to be used for general rebalancing
-* __buffer asset(s)__: one (or more, linked by weights) investment account(s) that are used to buffer excess cash
+The holding granularity for projection is a mixture of what is mandated by fincast and domain model convention:
+* __external Cash__ (mandated and created by __fincast__): placeholder for all external cash holdings
+* __internal Cash__ (mandated by __fincast__): all bank account holdings are aggregated into one internal cash holding
+* __dedicated holdings__ (bank account or investments, anything possible acctually)
+  * regulated, personal retirement provision products (AHV, BVG, 1e, 3a)
+  * large and/or illiquid assets (real estate, "whisky collection") and liabilites (mortgage)
+  * __bucket Investments__ (client mandated buckets) which are typically linked to a specific goal or concern
+* __buffer Investment__: analoguos to internal cash, sum of all non-bucket investments, one (or more, linked by weights) investment account(s) that are used to buffer excess cash. buffer holdings are typically investment accounts, but can be any other asset that is a. liquid and b. not earmarked for a specific purpose. these are the assets we would use to cover a negative cashflow in the year, but which can also be filled through positive cashflows.
 
 
 ## Result
@@ -149,25 +143,43 @@ Lets revisit the projection lifecycle:
 3. EOY Taxes
 4. EOY Rebalancing
 
-Bookings in phase 1 to 3 are either
-* __contractually fixed__ flows, f.ex. contribution to an insurance-linked pillar 3a product (where payment is mandatory), or payout of a pillar 3a account at the end of the savings period
-* or __individual discretionary and "manual"__ bookings, f.ex. "buying a house" or "payment into my pillar 2 account" (through goals or measures)
+So far bookings in phase 1 to 3 are __contractually fixed__ flows, f.ex. contribution to an insurance-linked pillar 3a product (where payment is mandatory), or payout of a pillar 3a account at the end of the savings period.
 
-In contrast, in phase 4 __EOY Rebalancing__, we do __automatic but voluntary__ rebalancing of holdings.
+However, there is another category of bookings in phase 1, __"manual", discretionary__ bookings, f.ex. "buying a house" or "payment into my pillar 2 account" (through goals or measures).
+
+In phase 4 __EOY Rebalancing__, we do __"automatic", discretionary__ rebalancing of holdings.
 This is done in 4 steps, but depends on whether we have a positive or negative free cashflow in the year (see below):
-1. unconditional transfers (f.ex. "transfer the yearly max amout to my 3a account")
-2. ensure minimum liquidity on internalCash (f.ex. 3 months of expenses)
+1. unconditional, repeated, discretionary transfers (f.ex. "transfer the yearly max amout to my 3a account")
+2. determine whether we have a positive or negative free cashflow in the year (internalCash[12] > internalCash[0])
 3. handle liquidity overflow or shortfall:
-   * distribute positive free cashflow to "buffer assets"
-   * cover negative cashflow from "buffer assets"
-4. rebalance the "buffer assets"
+   * distribute positive free cashflow according to rules (see below)
+   * cover negative cashflow from "buffer holdings"
+4. rebalance internalCash (to minimum liquidity, f.ex. 3 months of expenses) and "buffer holdings"
 
-If there is a __positive free cashflow__ in the year (i.e. when we exceed the minimum cash balance on internalCash), we can distribute this free cashflow to certain other holdings, sequentially, in an absolute or relative way:
+If there is a __positive free cashflow__ in the year (i.e. when we exceed the minimum cash balance on internalCash), we can distribute this free cashflow to other holdings according to rules, sequentially, in an absolute or relative way:
 * "up to CHF 5000 to my Whisky collection", ...
-* "then 10%, capped by yearly max, to my 3a account"
-* the rest to my investment account / "buffer assets"
+* "10%, capped by yearly max, to my 3a account"
+* the rest to my investment account / "buffer holdings"
 
-If there is a __negative cashflow__ in the year (i.e. when we fall below the minimum cash balance on internalCash), we need to cover from the buffer assets.
+If there is a __negative cashflow__ in the year (i.e. when we fall below the minimum cash balance on internalCash), we need to cover from the buffer holdings.
 
-After the cashflow based distribution or collection, we can do a __rebalancing__ of the buffer assets in a relative way:
-* rebalance my defensive and my aggressive investment account to 75/25
+After the cashflow based distribution or collection, we can do a __rebalancing__ of the internal cash and the buffer holdings:
+* make sure internal cash balance is at minimum level, as long as buffer holdings are available
+* rebalance buffer holdings, f.ex. rebalance defensive and aggressive investment accounts to 75/25
+
+What do we need:
+Static data:
+* mark "bucket investments" (product type in domain model, explicit list in fincast)
+* mark "buffer holdings" with their respective weights (domain model: every non-bucket investment; fincast: currently handle like internal cash, just one holding)
+
+For discretionary manual bookings:
+* a list of discretionary bookings (at [date], [amount] | [percentage of fromHolding], [fromHolding], [toHolding]).
+  fromHolding can be a bucket (which implies it is linked to a goal or concern), here you can specify either percentage or a fixed amount.
+  otherwise fromHolding can be empty, which means it is internalCash and you can only specify a fixed amount.
+
+For EOY rebalancing:
+* a list of yearly unconditional bookings ([amount], [fromHolding], [toHolding], [startDate]-[endDate]) (fromHolding can be empty, in which case it is internalCash)
+* at this point, yearly profit is calculated, and we can use it for the following:
+* a list of yearly profit-based bookings ([amount], [toHolding], [startDate]-[endDate]) (fromHolding is always internalCash, amount can be a percentage of yearly profit or absolute, they will be sequentially honored until yearly profit is exhausted)
+* the minimum liquidity level (f.ex. 3 months of expenses)
+* a percentag allocation if the buffer holdings are more than one holding (f.ex. 75/25 for defensive/aggressive)
