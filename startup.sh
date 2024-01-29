@@ -10,12 +10,13 @@ if [ -n "$DYNO" ]; then
     git clone ${REPO_URL} ${PAGES_DIR}
 fi
 
-chown -R www-data:www-data ${PAGES_DIR}
+# chown -R www-data:www-data ${PAGES_DIR}
 
 # Index the documentation
 /var/www/html/bin/plugin tntsearch index
 
 # Set the port
+echo whoami
 echo $PORT
 echo ${PORT:-80}
 

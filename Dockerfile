@@ -118,7 +118,7 @@ RUN chmod +x /startup.sh
 # ENTRYPOINT ["/entrypoint.sh"]
 # CMD ["apache2-foreground"]
 # CMD ["sh", "-c", "cron && apache2-foreground"]
-CMD sed -i "s/80/${PORT:-80}/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf && docker-php-entrypoint apache2-foreground
+# CMD sed -i "s/80/${PORT:-80}/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf && docker-php-entrypoint apache2-foreground
 
 # Set the script as the entry point
 ENTRYPOINT ["/startup.sh"]
