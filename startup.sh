@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the repository and the target directory
-REPO_URL="https://$GITHUB_USER:$GITHUB_TOKEN@github.com/yourusername/your-repo.git"
+REPO_URL="https://$GITHUB_USER:$GITHUB_TOKEN@github.com/dfp-ch/dfp-docs.git"
 PAGES_DIR="/var/www/html/user/pages"
 
 # Copy content from GitHub if running on Heroku
