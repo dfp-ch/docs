@@ -95,7 +95,7 @@ RUN bin/gpm install presentation
 # COPY --chown=www-data:www-data pages/ /var/www/html/user/pages
 
 # Index pages for search
-RUN bin/plugin tntsearch index
+# RUN bin/plugin tntsearch index
 
 # Return to root user
 USER root
@@ -109,16 +109,16 @@ USER root
 # mount point for local development only (see compose.yaml, Heroku DOES NOT support volumes)
 # VOLUME ["/var/www/html/user/pages"]
 
-# ENTRYPOINT ["/entrypoint.sh"]
-# CMD ["apache2-foreground"]
-# CMD ["sh", "-c", "cron && apache2-foreground"]
-CMD sed -i "s/80/${PORT:-80}/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf
-
 # Copy the startup script
 COPY startup.sh /startup.sh
 
 # Make the script executable
 RUN chmod +x /startup.sh
+
+# ENTRYPOINT ["/entrypoint.sh"]
+# CMD ["apache2-foreground"]
+# CMD ["sh", "-c", "cron && apache2-foreground"]
+RUN sed -i "s/80/${PORT:-80}/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf
 
 # Set the script as the entry point
 ENTRYPOINT ["/startup.sh"]

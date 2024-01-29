@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the repository and the target directory
-REPO_URL="https://$GIT_USERNAME:$GIT_PASSWORD@github.com/yourusername/your-repo.git"
+REPO_URL="https://$GITHUB_USER:$GITHUB_TOKEN@github.com/yourusername/your-repo.git"
 PAGES_DIR="/var/www/html/user/pages"
 
 # Copy content from GitHub if running on Heroku
