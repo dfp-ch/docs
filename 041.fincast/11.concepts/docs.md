@@ -18,16 +18,23 @@ taxonomy:
 * fincast household: model of exactly one future (household, person, holdings)
 * financial components: financial calculations, w/o financial planning context
 
+![futures](domain%20model%20with%20fincast.png)
+
 
 ## Mapping: domain model -> fincast household -> financial components
 
-![timeline](timeline.jpg)
+![futures](domain%20model%20with%20fincast%20-%20futures%203.png)
+
+
+## Product Configuration
+
+<iframe id="presentation" src="./presentation.html" frameborder="no"></iframe>
 
 
 ## Basics: Time and Money resolution
 
-* SimDate has a monthly time resolution
-* Double for amounts, we are not doing bookkeeping to the cent
+* SimDate provides for a monthly time resolution
+* Amount are kept as doubles, we are not doing bookkeeping to the cent
 
 
 ## Household Structure
