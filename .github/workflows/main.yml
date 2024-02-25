@@ -1,0 +1,22 @@
+name: Restart CMS (docs.dfp.ch)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Login
+        uses: akhileshns/heroku-deploy@v3.12.12 # This GitHub Action simplifies Heroku operations
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: dfp-docs
+          heroku_email: hannes_brunner@hotmail.com
+          
+      - name: Restart Dynos
+        run: heroku restart -a dfp-docs
