@@ -6,17 +6,24 @@ on:
       - main
 
 jobs:
-  deploy:
+  restart:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Login
-        uses: akhileshns/heroku-deploy@v3.12.12 # This GitHub Action simplifies Heroku operations
-        with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: dfp-docs
-          heroku_email: hannes_brunner@hotmail.com
-          
+      - name: Install Heroku CLI
+        run: |
+          curl https://cli-assets.heroku.com/install.sh | sh
+
+      - name: Heroku Login
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: |
+          heroku login -i
+
       - name: Restart Dynos
-        run: heroku restart -a dfp-docs
+        run: |
+          heroku restart -a dfp-docs
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
