@@ -1,5 +1,5 @@
 ---
-title: ADR - Architecture Decision Record
+title: ADR
 taxonomy:
     category: docs
 ---

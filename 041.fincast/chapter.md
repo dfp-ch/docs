@@ -6,6 +6,6 @@ taxonomy:
 
 ### Chapter 4
 
-# Fincast Library
+# fincast Library
 
 This chapter describes the fincast (**fin**ancial planning fore**cast**) library.
