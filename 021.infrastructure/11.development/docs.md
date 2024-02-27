@@ -10,6 +10,8 @@ Our applications (app-server, ai-server and docs-server) are hosted on Heroku, f
 
 Two JVM libraries (dddrive and fincast) are hosted on Maven Central (via Sonatype Nexus).
 
+Development Tools: JVM Server side development (app-server, fincast, dddrive) is done in IntelliJ IDEA. UI development is done in Visual Studio Code. The AI server (node with Typescript) is developed in Visual Studio Code. Technical documentation is done in Visual Studio Code.
+
 Issue tracking and project management is done in Trello.
 
 ## Github Repositories
