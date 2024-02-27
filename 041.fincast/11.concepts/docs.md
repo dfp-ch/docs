@@ -24,6 +24,7 @@ The domain model and fincast have different purposes and therefore different str
 * __fincast__: model of __exactly one future__ (household, person + holdings, irrespective if holding, goal, concern, measure)
 
 Examples:
+
 | __domain model__ | __fincast__ |
 | --- | --- |
 | __goal__: potential early retirement | retire early at 63 |
