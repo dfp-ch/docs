@@ -81,8 +81,8 @@ Currently fincast supports the following __Product / Holding Catalog__
 			* __Investment__ (with contribution plan, cash/bond/stock part, withdrawal plan)
 			* __ChPillarTwoCapital__ (*)
 		* _Real Asset_
-			* __Real Estate__
-			* __Tangible Asset__ (depreciating, appreciating)
+			* __RealEstate__
+			* __TangibleAsset__ (depreciating, appreciating)
 	* _Liability_ (negative value)
 		* __Liability__
 * _Contract_ (holdings that only generate value flows)
