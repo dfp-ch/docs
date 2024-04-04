@@ -30,6 +30,10 @@ These are typically the things you have to state in your tax declaration.
 
 A financially relevent goal of the household or its members.
 
+Goals can be quite vague (f.ex. "optimise my retirement situation") or very specific (f.ex. "I want to buy a house in Weiningen in Q4 2024 for 1M CHF"). We model them both as goals, but with the distinction between
+- Aspiration (vague)
+- Objective (specific)
+
 ### Concern (objPart)
 
 Financially relevant concerns of the household or its members.
@@ -64,6 +68,43 @@ Actions may be grouped into a strategies (TBD).
 ### Strategy (docPart)
 
 A strategy (used as per the CFP terminology) is a subset of a financial plan, that is designed to adress a specific area (retirement planning, risk reduction, ...).
+
+## Interplay between Goals and Strategies/Actions
+
+### Aspiration (The Why)
+
+Aspiration represents the broad, qualitative vision or overarching desires an individual has regarding their financial future.
+It's about the fundamental reasons behind wanting to manage and improve one's financial situation.
+Examples might include "achieving financial independence," "ensuring a comfortable retirement," or "providing for my family's future."
+Aspirations are the motivational foundation upon which more concrete plans are built.
+
+### Objective (The What)
+
+Objective refers to specific, measurable goals that support and are inspired by the client's aspirations (which may or may not be explicitly stated).
+Objectives are clear, quantifiable targets that serve as milestones on the path to realizing aspirations.
+They include details such as amounts, timelines, and other criteria that allow for tracking progress.
+For example, "save $1 million for retirement by age 65" or "purchase a home worth $400,000 in five years."
+
+### Strategy (The How - Broad Approach)
+
+Strategy outlines the broad approach or methodologies to be employed to achieve the objectives, thereby fulfilling the client's aspirations.
+It includes the rationale for selecting certain paths over others and is informed by an understanding of the client's current financial situation, risk tolerance, time horizon, and other personal factors.
+A strategy might involve "utilizing tax-advantaged accounts to maximize retirement savings" or "diversifying investments to balance growth and risk." 
+It sets the direction for the specific actions to be taken.
+
+### Actions (The How - Specific Steps)
+
+Actions are the specific, actionable steps that need to be taken to implement the strategy.
+These are the concrete tasks or decisions that the client, often with the advisor's guidance, needs to execute.
+Actions turn the strategy into reality and are directly aimed at achieving the set objectives.
+Following the strategy of utilizing tax-advantaged accounts, actions could include "contribute $19,500 annually to a 401(k) plan," "open a Roth IRA and contribute the maximum allowable amount," or "rebalance the investment portfolio annually to maintain the desired asset allocation."
+
+In this framework:
+
+Aspirations give rise to Objectives, which define what needs to be achieved in clear terms.
+Strategies provide a broad approach on how to achieve these objectives, considering the client's entire financial picture and personal preferences.
+Actions break down the strategy into specific steps, detailing exactly what will be done to move towards the objectives.
+This hierarchy from aspirations down to actions helps in structuring the financial planning process as a coherent and purpose-driven journey, ensuring that every financial decision and action taken is aligned with the individual's ultimate financial goals and desires.
 
 ## Product (obj)
 
