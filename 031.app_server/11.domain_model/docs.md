@@ -55,44 +55,46 @@ A scenario can therefore define its own set of goals (and maybe concerns).
 An advice is the answer of a financial planner to a household scenario.
 
 One advice targets exactly one scenario.
-There could be multiple advices for one scenario, in order to elaborate different solutions.
-In order to address the feasability or optimisation of a scenario, an advice can define actions.
+There could be multiple advices (versions) for one scenario, in order to elaborate different solutions.
+In order to address the feasability or optimisation of a scenario, an advice can define strategies and actions.
+Each advice has its own worflow (every version of advice for a specific scenario can be dismissid or elaborated separatly).
 
 ### Action (docPart)
 
 An action is a concrete step that should / can be taken in order to address a concern or goal.
 
+An action may be specific to a certain goal.
 An action is proposed by a financial planner and can be accepted or rejected by the household.
-Actions may be grouped into a strategies (TBD).
+Actions may be grouped into strategies (TBD).
 
 ### Strategy (docPart)
 
-A strategy (used as per the CFP terminology) is a subset of a financial plan, that is designed to adress a specific area (retirement planning, risk reduction, ...).
+A strategy (used as per the CFP terminology) is a subset of a financial plan, that is designed to adress either a specific area (retirement planning, risk reduction, ...) and/or a goal (probably rather aspirations than objectives).
 
 ## Interplay between Goals and Strategies/Actions
 
-### Aspiration (The Why)
+### Aspiration (the Why)
 
 Aspiration represents the broad, qualitative vision or overarching desires an individual has regarding their financial future.
 It's about the fundamental reasons behind wanting to manage and improve one's financial situation.
 Examples might include "achieving financial independence," "ensuring a comfortable retirement," or "providing for my family's future."
 Aspirations are the motivational foundation upon which more concrete plans are built.
 
-### Objective (The What)
+### Objective (the What)
 
 Objective refers to specific, measurable goals that support and are inspired by the client's aspirations (which may or may not be explicitly stated).
 Objectives are clear, quantifiable targets that serve as milestones on the path to realizing aspirations.
 They include details such as amounts, timelines, and other criteria that allow for tracking progress.
 For example, "save $1 million for retirement by age 65" or "purchase a home worth $400,000 in five years."
 
-### Strategy (The How - Broad Approach)
+### Strategy (the How - Broad Approach)
 
 Strategy outlines the broad approach or methodologies to be employed to achieve the objectives, thereby fulfilling the client's aspirations.
 It includes the rationale for selecting certain paths over others and is informed by an understanding of the client's current financial situation, risk tolerance, time horizon, and other personal factors.
 A strategy might involve "utilizing tax-advantaged accounts to maximize retirement savings" or "diversifying investments to balance growth and risk." 
 It sets the direction for the specific actions to be taken.
 
-### Actions (The How - Specific Steps)
+### Actions (the How - Specific Steps)
 
 Actions are the specific, actionable steps that need to be taken to implement the strategy.
 These are the concrete tasks or decisions that the client, often with the advisor's guidance, needs to execute.
@@ -101,10 +103,9 @@ Following the strategy of utilizing tax-advantaged accounts, actions could inclu
 
 In this framework:
 
-Aspirations give rise to Objectives, which define what needs to be achieved in clear terms.
-Strategies provide a broad approach on how to achieve these objectives, considering the client's entire financial picture and personal preferences.
-Actions break down the strategy into specific steps, detailing exactly what will be done to move towards the objectives.
-This hierarchy from aspirations down to actions helps in structuring the financial planning process as a coherent and purpose-driven journey, ensuring that every financial decision and action taken is aligned with the individual's ultimate financial goals and desires.
+Aspirations give rise to Objectives, which define what needs to be achieved in clear terms (but not every Aspiration needs to be detailed as Objectives, they might remain vague from a customer perspective).
+Strategies provide a broad approach on how to achieve these goals (aspirations and objectives), considering the client's entire financial picture and personal preferences.
+Actions break down the strategy into specific steps, detailing exactly what will be done to move towards the goals.
 
 ## Product (obj)
 
@@ -113,3 +114,5 @@ A generalised financial product, or rather a product with financial planning imp
 ### Termsheet (property)
 
 ## Document (obj)
+
+A fincial planning relevant document.
