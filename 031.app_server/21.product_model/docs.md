@@ -1,10 +1,10 @@
 ---
 title: Product Model
 taxonomy:
-    category: docs
+  category: docs
 ---
 
-# Termsheet Model
+## Termsheet Model
 
 Report generated on [2024-04-09 15:49:18] with [/Digital Financial Planners/DFP - Documents/04 Architecture/Data Model/Lists/gen_termsheet_config_overview.py]
 
@@ -75,7 +75,7 @@ Report generated on [2024-04-09 15:49:18] with [/Digital Financial Planners/DFP 
 |  |  | toHolding | HOLDING | Ziel | TermsheetConfig.kt |
 
 
-# Product Model
+## Product Model
 
 Report generated on [2024-04-09 15:52:04] with [/Digital Financial Planners/DFP - Documents/04 Architecture/Data Model/Lists/gen_product_config_overview.py]
 
@@ -83,31 +83,31 @@ Report generated on [2024-04-09 15:52:04] with [/Digital Financial Planners/DFP 
 |---|---|---|---|---|---|---|---|
 | asset | tangibleAsset | appreciatingAsset | Wachstumsvermögenswert | Appreciating Tangible Asset | None |  | AssetConfig.kt |
 |  |  | depreciatingAsset | Verbrauchsvermögenswert | Depreciating Tangible Asset | None |  | AssetConfig.kt |
-| cash | bankAccount | bankAccount | Bank Account | Bank Account | None | creditInterestRate</br>debitInterestRate | AssetConfig.kt |
-|  |  | savingsAccount | Savings Account | Savings Account | None | creditInterestRate</br>debitInterestRate | AssetConfig.kt |
-| expense | alimonyExpense | alimonyExpense | Alimony Expense | Financial support for children/ex-spouse (outgoing) | ChTax.AlimonyExpense | periodicity</br> | ContractConfig.kt |
-|  | expense | expense | Expense | Recurring expense (typically living costs) | None | periodicity</br> | ContractConfig.kt |
-|  |  | payment | Payment | One-time payment (typically larger, f.ex. legal settlement) | None | periodicity</br>frozen</br>hidden</br> | ContractConfig.kt |
-|  |  | rent | Rent | Rent | ChTax.ExpenseRent | periodicity</br> | ContractConfig.kt |
-| goal | bankAccount | earlyRetirement | Early Retirement |  |  | retirementAge</br>startDate</br>retirementDate</br>impact</br>on</br>expenses? | GoalConfig.kt |
-| income | alimonyIncome | alimonyIncome | Alimony Income | Financial support for children/ex-spouse (incoming) | ChTax.AlimonyIncome | periodicity</br> | ContractConfig.kt |
-|  | income | income | Income | Income | None | periodicity</br> | ContractConfig.kt |
-| investment | investment | investmentPlan | Investment Plan | Investment Plan | None | bond</br>bondInterestRate</br>cash</br>cash</br>cashInterestRate</br>contributionPeriodicity</br>managementFee</br>performanceFee</br>stock</br>stockCapitalGain</br>stockDividendYield | AssetConfig.kt |
-|  |  | portfolio | Investment Portfolio | Investment Portfolio | None | bond</br>bondInterestRate</br>cash</br>cash</br>cashInterestRate</br>contribution</br>contributionEndDate</br>contributionPeriodicity</br>contributionStartDate</br>managementFee</br>performanceFee</br>stock</br>stockCapitalGain</br>stockDividendYield</br>withdrawal</br>withdrawalEndDate</br>withdrawalPeriodicity</br>withdrawalStartDate | AssetConfig.kt |
-|  |  | savingsPlan | Savings Plan | Savings Plan | None | bond</br>bondInterestRate</br>cash</br>cashInterestRate</br>cashInterestRate</br>contributionPeriodicity</br>managementFee</br>performanceFee</br>stock</br>stockCapitalGain</br>stockDividendYield | AssetConfig.kt |
-| liability | liability | None | Liability | Liability | None | interestRate</br> | LiabilityConfig.kt |
-|  |  | None | Loan | Loan | None | interestRate</br> | LiabilityConfig.kt |
-| mortgage |  | chFirstMortgage | Erste Hypothek | CH First Mortgage | None | interestRate</br> | SwissRealEstateConfig.kt |
-|  |  | chSecondMortgage | Zweite Hypothek | CH Second Mortgage | None | interestRate</br> | SwissRealEstateConfig.kt |
-| realEstate | chRealEstate | chRealEstate | Immobilie | CH Real Estate | None | maintenanceRate</br> | SwissRealEstateConfig.kt |
-| retirement | chPillarOne | chPillarOne | AHV | AHV | None | missingContributionYears</br>retirementAge | SwissPensionConfig.kt |
+| cash | bankAccount | bankAccount | Bank Account | Bank Account | None | creditInterestRate<br>debitInterestRate | AssetConfig.kt |
+|  |  | savingsAccount | Savings Account | Savings Account | None | creditInterestRate<br>debitInterestRate | AssetConfig.kt |
+| expense | alimonyExpense | alimonyExpense | Alimony Expense | Financial support for children/ex-spouse (outgoing) | ChTax.AlimonyExpense | periodicity<br> | ContractConfig.kt |
+|  | expense | expense | Expense | Recurring expense (typically living costs) | None | periodicity<br> | ContractConfig.kt |
+|  |  | payment | Payment | One-time payment (typically larger, f.ex. legal settlement) | None | periodicity<br>frozen<br>hidden<br> | ContractConfig.kt |
+|  |  | rent | Rent | Rent | ChTax.ExpenseRent | periodicity<br> | ContractConfig.kt |
+| goal | bankAccount | earlyRetirement | Early Retirement |  |  | retirementAge<br>startDate<br>retirementDate<br>impact<br>on<br>expenses? | GoalConfig.kt |
+| income | alimonyIncome | alimonyIncome | Alimony Income | Financial support for children/ex-spouse (incoming) | ChTax.AlimonyIncome | periodicity<br> | ContractConfig.kt |
+|  | income | income | Income | Income | None | periodicity<br> | ContractConfig.kt |
+| investment | investment | investmentPlan | Investment Plan | Investment Plan | None | bond<br>bondInterestRate<br>cash<br>cash<br>cashInterestRate<br>contributionPeriodicity<br>managementFee<br>performanceFee<br>stock<br>stockCapitalGain<br>stockDividendYield | AssetConfig.kt |
+|  |  | portfolio | Investment Portfolio | Investment Portfolio | None | bond<br>bondInterestRate<br>cash<br>cash<br>cashInterestRate<br>contribution<br>contributionEndDate<br>contributionPeriodicity<br>contributionStartDate<br>managementFee<br>performanceFee<br>stock<br>stockCapitalGain<br>stockDividendYield<br>withdrawal<br>withdrawalEndDate<br>withdrawalPeriodicity<br>withdrawalStartDate | AssetConfig.kt |
+|  |  | savingsPlan | Savings Plan | Savings Plan | None | bond<br>bondInterestRate<br>cash<br>cashInterestRate<br>cashInterestRate<br>contributionPeriodicity<br>managementFee<br>performanceFee<br>stock<br>stockCapitalGain<br>stockDividendYield | AssetConfig.kt |
+| liability | liability | None | Liability | Liability | None | interestRate<br> | LiabilityConfig.kt |
+|  |  | None | Loan | Loan | None | interestRate<br> | LiabilityConfig.kt |
+| mortgage |  | chFirstMortgage | Erste Hypothek | CH First Mortgage | None | interestRate<br> | SwissRealEstateConfig.kt |
+|  |  | chSecondMortgage | Zweite Hypothek | CH Second Mortgage | None | interestRate<br> | SwissRealEstateConfig.kt |
+| realEstate | chRealEstate | chRealEstate | Immobilie | CH Real Estate | None | maintenanceRate<br> | SwissRealEstateConfig.kt |
+| retirement | chPillarOne | chPillarOne | AHV | AHV | None | missingContributionYears<br>retirementAge | SwissPensionConfig.kt |
 |  | chPillarTwo | chPillarTwo | Pensionskasse | Pensionskasse | None |  | SwissPensionConfig.kt |
-|  | investment | chPillar1ePortfolio | BVG 1e | BVG 1e | ChTax.Investment3a | bond</br>bondInterestRate</br>cash</br>cashInterestRate</br>contribution</br>contributionEndDate</br>contributionPeriodicity</br>contributionStartDate</br>managementFee</br>performanceFee</br>stock</br>stockCapitalGain</br>stockDividendYield</br>withdrawalEndDate</br>withdrawalPeriodicity</br>withdrawalStartDate | SwissPensionConfig.kt |
-|  |  | chPillar3aAccount | Säule 3a Konto | Säule 3a Konto | ChTax.Investment3a | bond</br>cashInterestRate</br>cash</br>contribution</br>contributionEndDate</br>contributionPeriodicity</br>contributionStartDate</br>managementFee</br>performanceFee</br>stock</br>withdrawalEndDate</br>withdrawalPeriodicity</br>withdrawalStartDate | SwissPensionConfig.kt |
-|  |  | chPillar3aPortfolio | Säule 3a Depot | Säule 3a Depot | ChTax.Investment3a | bond</br>bondInterestRate</br>cash</br>cashInterestRate</br>contributionPeriodicity</br>managementFee</br>performanceFee</br>stock</br>stockCapitalGain</br>stockDividendYield</br>withdrawalPeriodicity | SwissPensionConfig.kt |
+|  | investment | chPillar1ePortfolio | BVG 1e | BVG 1e | ChTax.Investment3a | bond<br>bondInterestRate<br>cash<br>cashInterestRate<br>contribution<br>contributionEndDate<br>contributionPeriodicity<br>contributionStartDate<br>managementFee<br>performanceFee<br>stock<br>stockCapitalGain<br>stockDividendYield<br>withdrawalEndDate<br>withdrawalPeriodicity<br>withdrawalStartDate | SwissPensionConfig.kt |
+|  |  | chPillar3aAccount | Säule 3a Konto | Säule 3a Konto | ChTax.Investment3a | bond<br>cashInterestRate<br>cash<br>contribution<br>contributionEndDate<br>contributionPeriodicity<br>contributionStartDate<br>managementFee<br>performanceFee<br>stock<br>withdrawalEndDate<br>withdrawalPeriodicity<br>withdrawalStartDate | SwissPensionConfig.kt |
+|  |  | chPillar3aPortfolio | Säule 3a Depot | Säule 3a Depot | ChTax.Investment3a | bond<br>bondInterestRate<br>cash<br>cashInterestRate<br>contributionPeriodicity<br>managementFee<br>performanceFee<br>stock<br>stockCapitalGain<br>stockDividendYield<br>withdrawalPeriodicity | SwissPensionConfig.kt |
 | salary | chSalary | chPrimarySalary | Haupterwerbseinkommen | CH Primary Salary | ChTax.SalaryPrimary |  | SwissIncomeConfig.kt |
 |  |  | chSecondarySalary | Nebenerwerbseinkommen | CH Secondary Salary | ChTax.SalarySecondary |  | SwissIncomeConfig.kt |
 | tax | chTax | None | Steuern CH | Steuern CH | None |  | SwissTaxConfig.kt |
-| transfer | profitShare | profitShare | Profit Share | Profit Share (EOY) | None | periodicity</br>frozen</br>hidden</br> | ContractConfig.kt |
-|  | transfer | expenditure | Expenditure | One-time, typically larger, expenditure (e.g. car purchase) | None | periodicity</br>frozen</br>hidden</br> | ContractConfig.kt |
-|  |  | transfer | Transfer | Recurring, non-contractual, transfer (f.ex. 3a payments) | None | periodicity</br> | ContractConfig.kt |
+| transfer | profitShare | profitShare | Profit Share | Profit Share (EOY) | None | periodicity<br>frozen<br>hidden<br> | ContractConfig.kt |
+|  | transfer | expenditure | Expenditure | One-time, typically larger, expenditure (e.g. car purchase) | None | periodicity<br>frozen<br>hidden<br> | ContractConfig.kt |
+|  |  | transfer | Transfer | Recurring, non-contractual, transfer (f.ex. 3a payments) | None | periodicity<br> | ContractConfig.kt |
