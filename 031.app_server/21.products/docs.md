@@ -1,5 +1,5 @@
 ---
-title: Product Model
+title: Products
 taxonomy:
   category: docs
 ---
