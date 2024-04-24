@@ -1,0 +1,17 @@
+Name;Id;Country;Termsheet
+AHV;chPillarOne;ch;chPillarOne
+Alimony Expense;alimonyExpense;;alimonyExpense
+Alimony Income;alimonyIncome;;alimonyIncome
+Bank Account;bankAccount;;bankAccount
+Erwerbseinkommen;chSalary;ch;chSalary
+Expense;expense;;cashflow
+Immobilie;chRealEstate;ch;chRealEstate
+Income;income;;cashflow
+Investment;investment;;investment
+Liability;liability;;liability
+Pensionskasse;chPillarTwo;ch;chPillarTwo
+Profit Share;profitShare;;profitShare
+Steuern CH;chTax;ch;chTax
+Tangible Asset;tangibleAsset;;tangibleAsset
+Transfer;transfer;;transfer
+
