@@ -1,0 +1,63 @@
+TS Name;TS Id;Term Id;Term Name;Term Type
+AHV;chPillarOne;annualPension44;Jährliche Rente (gemäss Tabelle 44);value
+AHV;chPillarOne;missingContributionYears;Fehlende Beitragsjahre;integer
+AHV;chPillarOne;retirementAge;Rentenalter (63 .. 70);integer
+Alimony (Incoming);alimonyIncome;amount;Betrag;value
+Alimony (Incoming);alimonyIncome;payer;Zahler;member
+Alimony (Incoming);alimonyIncome;periodicity;Periodizität;periodicity
+Alimony (Outgoing);alimonyExpense;amount;Betrag;value
+Alimony (Outgoing);alimonyExpense;periodicity;Periodizität;periodicity
+Alimony (Outgoing);alimonyExpense;recipient;Empfänger;member
+BVG (Pensionskasse);chPillarTwo;annualPension;Rente;value
+BVG (Pensionskasse);chPillarTwo;availablePurchase;Möglicher Einkauf (auf Rentenalter);value
+BVG (Pensionskasse);chPillarTwo;capitalWithdrawal;Kapitalbezug (in %);percentage
+BVG (Pensionskasse);chPillarTwo;conversionRate;Umwandlungssatz;percentage
+BVG (Pensionskasse);chPillarTwo;homeOwnership;Bezug Wohneigentum;value
+BVG (Pensionskasse);chPillarTwo;projectedVestedBenefits;Prognostiziertes Freizügigkeitsguthaben;value
+BVG (Pensionskasse);chPillarTwo;retirementAge;Rentenalter (58 .. 65);integer
+BVG (Pensionskasse);chPillarTwo;statementDate;Datum des PK Auszugs;date
+CH Real Estate;chRealEstate;fiscalValue;Fiscal Value;value
+CH Real Estate;chRealEstate;imputedRentalValue;Imputed Rental Value;value
+CH Real Estate;chRealEstate;isSelfOccupied;Is self occupied?;boolean
+CH Real Estate;chRealEstate;maintenanceRate;Maintenance Rate;percentage
+CH Real Estate;chRealEstate;rentalIncome;Rental Income (yearly);amount
+CH Salary;chSalary;annualGrossIncome;Jährliches Bruttoeinkommen;value
+CH Salary;chSalary;annualNetIncome;Jährliches Nettoeinkommen;value
+Cashflow;cashflow;amount;Betrag;value
+Cashflow;cashflow;periodicity;Periodizität;periodicity
+Investment;investment;assetAllocation;Asset Allocation;asset_allocation
+Investment;investment;contribution;Einzahlung;value
+Investment;investment;contributionEndDate;Ende Einzahlung;date
+Investment;investment;contributionPeriodicity;Periodiziät der Einzahlung;periodicity
+Investment;investment;contributionStartDate;Start Einzahlung;date
+Investment;investment;managementFee;Management Fee;percentage
+Investment;investment;performanceFee;Performance Fee;percentage
+Investment;investment;withdrawal;Auszahlung;amount
+Investment;investment;withdrawalEndDate;Ende Auszahlung;date
+Investment;investment;withdrawalPeriodicity;Periodizität der Auszahlung;periodicity
+Investment;investment;withdrawalStartDate;Start Auszahlung;date
+Liability;liability;interestRate;Zinssatz;percentage
+Profit Share;profitShare;amount;Betrag;value
+Profit Share;profitShare;fromHolding;Quelle;holding
+Profit Share;profitShare;periodicity;Periodizität;periodicity
+Profit Share;profitShare;seqNr;Reihenfolge;integer
+Profit Share;profitShare;toHolding;Ziel;holding
+Steuern CH;chTax;hhChildCareCosts;HH Kosten Kinderbetreuung;value
+Steuern CH;chTax;hhDeductionInsurance;HH Versicherungsprämien;value
+Steuern CH;chTax;hhDeductionOther;HH Übrige Abzüge;value
+Steuern CH;chTax;p1MainMealCosts;P1 Verpflegungskosten Haupterwerb;value
+Steuern CH;chTax;p1MainOtherExpenses;P1 Übrige Berufsauslagen Haupterwerb;value
+Steuern CH;chTax;p1MainTravelCosts;P1 Fahrkosten Haupterwerb;value
+Steuern CH;chTax;p1SecondaryExpenses;P1 Berufsauslagen Nebenerwerb;value
+Steuern CH;chTax;p2MainMealCosts;P2 Verpflegungskosten Haupterwerb;value
+Steuern CH;chTax;p2MainOtherExpenses;P2 Übrige Berufsauslagen Haupterwerb;value
+Steuern CH;chTax;p2MainTravelCosts;P2 Fahrkosten Haupterwerb;value
+Steuern CH;chTax;p2SecondaryExpenses;P2 Berufsauslagen Nebenerwerb;value
+Tangible Asset;tangibleAsset;insuranceRate;Versicherungskosten;percentage
+Tangible Asset;tangibleAsset;maintenanceRate;Instandhaltungskosten;percentage
+Tangible Asset;tangibleAsset;yieldRate;Zinssatz;percentage
+Transfer;transfer;amount;Betrag;value
+Transfer;transfer;fromHolding;Quelle;holding
+Transfer;transfer;periodicity;Periodizität;periodicity
+Transfer;transfer;toHolding;Ziel;holding
+
