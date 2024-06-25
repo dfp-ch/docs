@@ -1,15 +1,11 @@
 ---
-import type { Props } from '@astrojs/starlight/props';
-import logo from '~/assets/astro-logo.svg?raw';
-import docs from '~/assets/docs.svg?raw';
-
-const main = 'https://astro.build/';
-const self = '/' + (Astro.props.locale || 'en') + '/infrastructure/development/docs/';
+const self = '/';
 ---
 
 <span class="site-title sl-flex">
-	<a class="astro-logo" href={main} set:html={logo} aria-label="Astro" />
-	<a class="docs-logo" href={self} set:html={docs} aria-label="Docs" />
+	<a class="docs-logo" href={self} aria-label="Docs">
+		<img class="docs-logo" src="/assets/logo-full-black.png" alt="Docs" />
+	</a>
 </span>
 
 <style>
@@ -19,11 +15,9 @@ const self = '/' + (Astro.props.locale || 'en') + '/infrastructure/development/d
 	.site-title a {
 		display: flex;
 	}
-	.astro-logo {
-		color: var(--sl-color-white);
-	}
 	.docs-logo {
-		color: var(--sl-color-text-accent);
+		color: var(--sl-color-white);
+		max-height: 3rem;
 	}
 
 	/* On focus, outline <img> and <svg> rather than <a> */
