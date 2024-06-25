@@ -11,13 +11,7 @@ import { rehypeAutolink } from './plugins/rehype-autolink';
 import { rehypeTasklistEnhancer } from './plugins/rehype-tasklist-enhancer';
 import { remarkFallbackLang } from './plugins/remark-fallback-lang';
 
-/* https://vercel.com/docs/projects/environment-variables/system-environment-variables#system-environment-variables */
-const VERCEL_PREVIEW_SITE =
-	process.env.VERCEL_ENV !== 'production' &&
-	process.env.VERCEL_URL &&
-	`https://${process.env.VERCEL_URL}`;
-
-const site = VERCEL_PREVIEW_SITE || 'https://docs.astro.build/';
+const site = 'https://docs.dfp.ch/';
 
 // https://astro.build/config
 export default defineConfig({
@@ -47,8 +41,7 @@ export default defineConfig({
 			locales: makeLocalesConfig(),
 			sidebar: makeSidebar(),
 			social: {
-				github: 'https://github.com/withastro/astro',
-				discord: 'https://astro.build/chat',
+				github: 'https://github.com/dfp-ch/docs',
 			},
 			pagefind: false,
 			head: [
@@ -57,7 +50,7 @@ export default defineConfig({
 					tag: 'link',
 					attrs: {
 						rel: 'icon',
-						href: '/favicon.ico',
+						href: '/logo.png',
 						sizes: '32x32',
 					},
 				},

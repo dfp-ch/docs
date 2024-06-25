@@ -19,10 +19,6 @@
  */
 export default [
 
-	{ text: 'Infrastructure', header: true, type: 'learn', key: 'infrastructure' },
-	{ text: 'Development', slug: 'infrastructure/development/docs', key: 'infrastructure/development/docs' },
-	{ text: 'Microsoft', slug: 'infrastructure/microsoft/docs', key: 'infrastructure/microsoft/docs' },
-
 	{ text: 'Application Server', header: true, type: 'learn', key: 'app_server' },
 	{ text: 'Domain Model', slug: 'app_server/domain_model/docs', key: 'app_server/domain_model/docs' },
 	{ text: 'Products', slug: 'app_server/products/products', key: 'app_server/products/products' },
@@ -42,6 +38,10 @@ export default [
 	{ text: 'Advisor', header: true, type: 'learn', key: 'advisor' },
 	{ text: 'Concepts', slug: 'advisor/concepts/docs', key: 'advisor/concepts/docs' },
 	{ text: 'ADR', slug: 'advisor/adr/adr', key: 'advisor/adr/adr' },
+
+	{ text: 'Infrastructure', header: true, type: 'learn', key: 'infrastructure' },
+	{ text: 'Development', slug: 'infrastructure/development/docs', key: 'infrastructure/development/docs' },
+	{ text: 'Microsoft', slug: 'infrastructure/microsoft/docs', key: 'infrastructure/microsoft/docs' },
 
 ] satisfies NavEntry[];
 
