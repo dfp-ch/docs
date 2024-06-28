@@ -73,7 +73,7 @@ __Special (summary) Holdings__
 
 Currently fincast supports the following __Product / Holding Catalog__
 
-* _Valuable_ (holdings that have a - positive or negative - value)
+* _Valuable_ (holdings that have a - positive or negative - value and might generate value flows)
 	* __Bank Account__ (checking, savings, CH vested benefits account)
 	* _Asset_ (positive value)
 		* _Financial Asset_
@@ -84,10 +84,11 @@ Currently fincast supports the following __Product / Holding Catalog__
 			* __TangibleAsset__ (depreciating, appreciating)
 	* _Liability_ (negative value)
 		* __Liability__
-* _Contract_ (holdings that only generate value flows)
-	* __Income__ (salary, rental income, ...)
-	* __Expense__ (rent, alimony, ...)
+* _Flow_ (holdings that generate simple value flows only)
+	* __Income__ (external income: salary, rental income, ...)
+	* __Expense__ (external expenses: rent, alimony, ...)
 	* __Transfer__ (internal transfer between holdings, f.ex. from internalCash to 3a account)
+* _Contract_ (holdings whose rules are a bit more complex or arbitrary, but typically also generate value flows)
 	* _Swiss Retirement Product_
 		* __ChPillarOne__
 		* __ChPillarTwoPension__ (*)

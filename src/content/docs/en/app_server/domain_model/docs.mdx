@@ -3,29 +3,72 @@ title: Domain Model
 i18nReady: false
 ---
 
-This document describes the domain model of the dfp application server, whose main elements are depicted below.
+This document describes the **Domain Model** of the dfp application server.
+In addition to just handling the domain of **financial planning** itself, we need to capture all the semantics around **Onboarding** a client through an **AI chatbot**.
+So the domain model is a bit more complex than just the financial planning domain, since we need to capture a clients nuanced intentions through the Onboarding process.
 
-![domain model](./domainModel.png)
+The following image shows a high-level view of the different entities and their relationships.
 
-## Household (obj)
+![domainModel](./0101_domainModel.png)
 
-The household is the main entity of the domain model.
+We can identify three main areas:
+* **Current situation** of the Household, with Members and the current financial situation (which +/- corresponds to the tax declaration + provision contracts)
+* **Future expectations** with Aspirations, Scenarios and Objectives of the Household
+* **Advice** from the Financial Advisor, which is the result of the financial planning process in response to the sitation of the Household
 
-It consists of one or more people that are bound and / or affected by a common financial environment.
+## Household and current financial situation (Object)
 
-### Member (objPart)
+The **Household** is the main entity of the domain model.
+It consists of one or more **Members** that are bound to and / or affected by a common financial environment.
+The current financial sitation is kept in so-called **Holdings**, which are roughly the things you have to state in your tax declaration, but also include retirement provisions (AHV, BVG, 3a etc).
 
-A member is a person that is a member of the household.
+![household](./0201_household.png)
 
-There always is a primary member (partner 1), optionally a secondary member (partner 2), and potentially other dependents / children in the household.
+#### Basic Houshold information
 
-### Holding (objPart)
+There is some basic financial planning relevant information on the Household itself:
+- [x] Tax domicile
+- [x] Civil status
+- [ ] ~~Matrimonial property regime (Güterstand)~~
 
-A holding is a valuable or contract that is currently held (or committed to/by with a high certainty) by the household.
+#### Civil Status
+- [x] Single (a single person)
+- [x] Married (a married couple)
+- [x] Registered Partnership
+- [ ] Cohabitation [Konkubinat] (a couple living together without being married)
 
-These are typically the things you have to state in your tax declaration.
+### Member
 
-### Goal (objPart)
+A **Member** is a person that is a member of the **Household**.
+
+There is always a primary Member (Partner 1) of the Household, for married couples and registered partnerships there also is a secondary Member (Partner 2).
+Additionally, other Members in the Household are typically dependents and/or children.
+
+### Holding (current financial situation)
+
+The current financial situation of the Household is kept in so-called **Holdings**, which contain
+- **Financial Assets** (f.ex. Bank Accounts, Investment Portfolios)
+- **Real Assets** (f.ex. Real Estate, Tangible Assets like Cars etc)
+- **Liabilities** (f.ex. Mortgages, Loans)
+- **Flows**, incoming and outgoing (f.ex. Salary, Rent, Alimony, Rental Income etc)
+
+The current financial situation also includes contractual obligations like interest payments or redemptions of Mortgages.
+
+The structure of the Holdings is defined by the **Product** that is used to instantiate the Holding.
+
+### Product
+
+A Product is like an Asset or Financial Instrument in a Securities Portfolio, but in includes a broader set of "instruments", both financial instruments as well as real assets.
+
+The **Product**
+- defines the attributes that need to be defined in order to personalise it for a specific holding (f.ex. the amount and interest rate of a mortgage) through a corresponding **Termsheet Template**, whose attributes are filled with the actual values in the **Termsheet** of the Holding.
+- drives the **Projection** calculation of the holding (f.ex. an Investment will be projected with a certain return rate)
+
+## Household and future expectations
+
+![futureExpectations](./0301_scenariosGoals.png)
+
+### Goal
 
 A financially relevent goal of the household or its members.
 
@@ -33,13 +76,13 @@ Goals can be quite vague (f.ex. "optimise my retirement situation") or very spec
 - Aspiration (vague)
 - Objective (specific)
 
-### Concern (objPart)
+### Concern
 
 Financially relevant concerns of the household or its members.
 
 Concerns can be explicitly stated or implicitly derived from the goals or the situation of the household.
 
-### Scenario (objPart)
+### Scenario
 
 A scenario is one mutual exclusive path into the future of the household.
 There is always one default scenario for a household.
@@ -49,7 +92,7 @@ These goals are characterised by being mutually exclusive to other goals, i.e. t
 
 A scenario can therefore define its own set of goals (and maybe concerns).
 
-## Advice (doc)
+## Advice (Order)
 
 An advice is the answer of a financial planner to a household scenario.
 
