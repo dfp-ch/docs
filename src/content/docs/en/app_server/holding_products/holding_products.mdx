@@ -1,0 +1,627 @@
+---
+title: Holding Products
+i18nReady: false
+---
+
+Generated on: 2024-11-19T12:01:13.074875100  
+<a href="/files/ModelOverview.xlsx" download="ModelOverview.xlsx">ModelOverview.xlsx</a>
+
+## <a id="main"></a> Holding Products
+
+| Name | Caption | Key | Product Category |
+| --- | --- | --- | --- |
+| [AHV](#ahv) | AHV | chPillarOne | retirement |
+| [Alimony Expense](#alimonyexpense) | Alimony Expense | alimonyExpense | expense |
+| [Alimony Income](#alimonyincome) | Alimony Income | alimonyIncome | income |
+| [BVG 1e](#bvg1e) | BVG 1e | chPillar1ePortfolio | retirement |
+| [Bank Account](#bankaccount) | Bank Account | bankAccount | cash |
+| [Erste Hypothek](#erstehypothek) | Erste Hypothek | chFirstMortgage | mortgage |
+| [Expenditure](#expenditure) | Expenditure | expenditure | transfer |
+| [Expense](#expense) | Expense | expense | expense |
+| [Haupterwerbseinkommen](#haupterwerbseinkommen) | Haupterwerbseinkommen | chPrimarySalary | salary |
+| [Immobilie](#immobilie) | Immobilie | chRealEstate | realEstate |
+| [Income](#income) | Income | income | income |
+| [Investment Plan](#investmentplan) | Investment Plan | investmentPlan | investment |
+| [Investment Portfolio](#investmentportfolio) | Investment Portfolio | portfolio | investment |
+| [Liability](#liability) | Liability | liability | liability |
+| [Loan](#loan) | Loan | loan | liability |
+| [Nebenerwerbseinkommen](#nebenerwerbseinkommen) | Nebenerwerbseinkommen | chSecondarySalary | salary |
+| [Payment](#payment) | Payment | payment | expense |
+| [Pensionskasse](#pensionskasse) | Pensionskasse | chPillarTwo | retirement |
+| [Profit Share](#profitshare) | Profit Share | profitShare | transfer |
+| [Rent](#rent) | Rent | rent | expense |
+| [Savings Account](#savingsaccount) | Savings Account | savingsAccount | cash |
+| [Savings Plan](#savingsplan) | Savings Plan | savingsPlan | investment |
+| [Steuern CH](#steuernch) | Steuern CH | chTax | tax |
+| [Säule 3a Depot](#sule3adepot) | Säule 3a Depot | chPillar3aPortfolio | retirement |
+| [Säule 3a Konto](#sule3akonto) | Säule 3a Konto | chPillar3aAccount | retirement |
+| [Transfer](#transfer) | Transfer | transfer | transfer |
+| [Verbrauchsvermögenswert](#verbrauchsvermgenswert) | Verbrauchsvermögenswert | depreciatingAsset | asset |
+| [Wachstumsvermögenswert](#wachstumsvermgenswert) | Wachstumsvermögenswert | appreciatingAsset | asset |
+| [Zweite Hypothek](#zweitehypothek) | Zweite Hypothek | chSecondMortgage | mortgage |
+
+---
+## <a id="ahv"></a> AHV
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | AHV |  |  |  |  |  |  |  |  |
+| Name | AHV |  |  |  |  |  |  |  |  |
+| Product Category | retirement |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | contract |  |  |  |  |  |  |  |  |
+| Product Type Group | contract |  |  |  |  |  |  |  |  |
+| Product Model | chPillarOne |  |  |  |  |  |  |  |  |
+| Termsheet Model | chPillarOne |  |  |  |  |  |  |  |  |
+| Term("annualPension44") |  | VALUE | - | - | - |  | - | - | - |
+| Term("missingContributionYears") | 0 | INTEGER | - | - | - | 0 | - | - | - |
+| Term("pensionStartDate") |  | DATE | + | - | - |  | + | - | - |
+
+[home](#main)
+
+---
+## <a id="alimonyexpense"></a> Alimony Expense
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Alimony Expense |  |  |  |  |  |  |  |  |
+| Name | Alimony Expense |  |  |  |  |  |  |  |  |
+| Product Category | expense |  |  |  |  |  |  |  |  |
+| Tax Code | alimonyExpense |  |  |  |  |  |  |  |  |
+| Product Type | expense |  |  |  |  |  |  |  |  |
+| Product Type Group | flow |  |  |  |  |  |  |  |  |
+| Product Model | alimonyExpense |  |  |  |  |  |  |  |  |
+| Termsheet Model | alimonyExpense |  |  |  |  |  |  |  |  |
+| Term("recipient") |  | MEMBER | - | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="alimonyincome"></a> Alimony Income
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Alimony Income |  |  |  |  |  |  |  |  |
+| Name | Alimony Income |  |  |  |  |  |  |  |  |
+| Product Category | income |  |  |  |  |  |  |  |  |
+| Tax Code | alimonyIncome |  |  |  |  |  |  |  |  |
+| Product Type | income |  |  |  |  |  |  |  |  |
+| Product Type Group | flow |  |  |  |  |  |  |  |  |
+| Product Model | alimonyIncome |  |  |  |  |  |  |  |  |
+| Termsheet Model | alimonyIncome |  |  |  |  |  |  |  |  |
+| Term("payer") |  | MEMBER | - | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="bvg1e"></a> BVG 1e
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | BVG 1e |  |  |  |  |  |  |  |  |
+| Name | BVG 1e |  |  |  |  |  |  |  |  |
+| Product Category | retirement |  |  |  |  |  |  |  |  |
+| Tax Code | 3a |  |  |  |  |  |  |  |  |
+| Product Type | asset |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | investment |  |  |  |  |  |  |  |  |
+| Termsheet Model | investment |  |  |  |  |  |  |  |  |
+| Term("contribution") |  | VALUE | + | - | - |  | - | - | - |
+| Term("contributionPeriodicity") | yearly | PERIODICITY | + | + | - |  | - | - | - |
+| Term("contributionStartDate") |  | DATE | + | - | - |  | - | - | - |
+| Term("contributionEndDate") |  | DATE | + | - | - |  | - | - | - |
+| Term("assetAllocation") | stock60_bond40 | ASSET_ALLOCATION | - | - | - |  | - | - | - |
+| Term("withdrawal") |  | AMOUNT | - | - | - |  | - | - | - |
+| Term("withdrawalPeriodicity") | once | PERIODICITY | + | - | - |  | - | - | - |
+| Term("withdrawalStartDate") |  | DATE | + | - | - |  | - | - | - |
+| Term("withdrawalEndDate") |  | DATE | + | - | - |  | - | - | - |
+| Term("managementFee") | 0.0 | PERCENTAGE | + | - | - |  | - | - | - |
+| Term("performanceFee") | 0.0 | PERCENTAGE | + | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="bankaccount"></a> Bank Account
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Bank Account |  |  |  |  |  |  |  |  |
+| Name | Bank Account |  |  |  |  |  |  |  |  |
+| Product Category | cash |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | valuable |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | bankAccount |  |  |  |  |  |  |  |  |
+| Termsheet Model | bankAccount |  |  |  |  |  |  |  |  |
+
+[home](#main)
+
+---
+## <a id="erstehypothek"></a> Erste Hypothek
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Erste Hypothek |  |  |  |  |  |  |  |  |
+| Name | Erste Hypothek |  |  |  |  |  |  |  |  |
+| Product Category | mortgage |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | liability |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | liability |  |  |  |  |  |  |  |  |
+| Termsheet Model | liability |  |  |  |  |  |  |  |  |
+| Term("interestRate") | 2.0 | PERCENTAGE | - | - | - |  | - | - | - |
+| Term("securedBy") |  | HOLDING | - | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="expenditure"></a> Expenditure
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Expenditure |  |  |  |  |  |  |  |  |
+| Name | Expenditure |  |  |  |  |  |  |  |  |
+| Product Category | transfer |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | flow |  |  |  |  |  |  |  |  |
+| Product Type Group | flow |  |  |  |  |  |  |  |  |
+| Product Model | transfer |  |  |  |  |  |  |  |  |
+| Termsheet Model | transfer |  |  |  |  |  |  |  |  |
+| Term("fromHolding") |  | HOLDING | - | - | - |  | - | - | - |
+| Term("toHolding") |  | HOLDING | - | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="expense"></a> Expense
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Expense |  |  |  |  |  |  |  |  |
+| Name | Expense |  |  |  |  |  |  |  |  |
+| Product Category | expense |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | expense |  |  |  |  |  |  |  |  |
+| Product Type Group | flow |  |  |  |  |  |  |  |  |
+| Product Model | expense |  |  |  |  |  |  |  |  |
+| Termsheet Model | cashflow |  |  |  |  |  |  |  |  |
+
+[home](#main)
+
+---
+## <a id="haupterwerbseinkommen"></a> Haupterwerbseinkommen
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Haupterwerbseinkommen |  |  |  |  |  |  |  |  |
+| Name | Haupterwerbseinkommen |  |  |  |  |  |  |  |  |
+| Product Category | salary |  |  |  |  |  |  |  |  |
+| Tax Code | primarySalary |  |  |  |  |  |  |  |  |
+| Product Type | flow |  |  |  |  |  |  |  |  |
+| Product Type Group | flow |  |  |  |  |  |  |  |  |
+| Product Model | chSalary |  |  |  |  |  |  |  |  |
+| Termsheet Model | chSalary |  |  |  |  |  |  |  |  |
+| Term("isNetAmount") | true | BOOLEAN | - | - | - | true | - | - | - |
+| Term("chPillarTwo") |  | HOLDING | - | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="immobilie"></a> Immobilie
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Immobilie |  |  |  |  |  |  |  |  |
+| Name | Immobilie |  |  |  |  |  |  |  |  |
+| Product Category | realEstate |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | asset |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | chRealEstate |  |  |  |  |  |  |  |  |
+| Termsheet Model | chRealEstate |  |  |  |  |  |  |  |  |
+| Term("fiscalValue") |  | VALUE | - | - | - |  | - | - | - |
+| Term("imputedRentalValue") |  | VALUE | - | - | - |  | - | - | - |
+| Term("isSelfOccupied") |  | BOOLEAN | - | - | - |  | - | - | - |
+| Term("rentalIncome") |  | AMOUNT | - | - | - |  | - | - | - |
+| Term("maintenanceRate") | 2.0 | PERCENTAGE | - | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="income"></a> Income
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Income |  |  |  |  |  |  |  |  |
+| Name | Income |  |  |  |  |  |  |  |  |
+| Product Category | income |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | income |  |  |  |  |  |  |  |  |
+| Product Type Group | flow |  |  |  |  |  |  |  |  |
+| Product Model | income |  |  |  |  |  |  |  |  |
+| Termsheet Model | cashflow |  |  |  |  |  |  |  |  |
+
+[home](#main)
+
+---
+## <a id="investmentplan"></a> Investment Plan
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Investment Plan |  |  |  |  |  |  |  |  |
+| Name | Investment Plan |  |  |  |  |  |  |  |  |
+| Product Category | investment |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | asset |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | investment |  |  |  |  |  |  |  |  |
+| Termsheet Model | investment |  |  |  |  |  |  |  |  |
+| Term("contribution") |  | VALUE | - | - | - |  | - | - | - |
+| Term("contributionPeriodicity") | yearly | PERIODICITY | - | - | - |  | - | - | - |
+| Term("contributionStartDate") |  | DATE | - | - | - |  | - | - | - |
+| Term("contributionEndDate") |  | DATE | - | - | - |  | - | - | - |
+| Term("assetAllocation") | stock60_bond40 | ASSET_ALLOCATION | - | - | - |  | - | - | - |
+| Term("withdrawal") |  | AMOUNT | - | - | - |  | - | - | - |
+| Term("withdrawalPeriodicity") |  | PERIODICITY | - | - | - |  | - | - | - |
+| Term("withdrawalStartDate") |  | DATE | - | - | - |  | - | - | - |
+| Term("withdrawalEndDate") |  | DATE | - | - | - |  | - | - | - |
+| Term("managementFee") | 2.0 | PERCENTAGE | - | - | - |  | - | - | - |
+| Term("performanceFee") | 20.0 | PERCENTAGE | - | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="investmentportfolio"></a> Investment Portfolio
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Investment Portfolio |  |  |  |  |  |  |  |  |
+| Name | Investment Portfolio |  |  |  |  |  |  |  |  |
+| Product Category | investment |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | asset |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | investment |  |  |  |  |  |  |  |  |
+| Termsheet Model | investment |  |  |  |  |  |  |  |  |
+| Term("contribution") | 0.0 | VALUE | + | - | - |  | - | - | - |
+| Term("contributionPeriodicity") |  | PERIODICITY | + | - | - |  | - | - | - |
+| Term("contributionStartDate") |  | DATE | + | - | - |  | - | - | - |
+| Term("contributionEndDate") |  | DATE | + | - | - |  | - | - | - |
+| Term("assetAllocation") | stock60_bond40 | ASSET_ALLOCATION | - | - | - |  | - | - | - |
+| Term("withdrawal") |  | AMOUNT | + | - | - |  | - | - | - |
+| Term("withdrawalPeriodicity") |  | PERIODICITY | + | - | - |  | - | - | - |
+| Term("withdrawalStartDate") |  | DATE | + | - | - |  | - | - | - |
+| Term("withdrawalEndDate") |  | DATE | + | - | - |  | - | - | - |
+| Term("managementFee") | 2.0 | PERCENTAGE | - | - | - |  | - | - | - |
+| Term("performanceFee") | 20.0 | PERCENTAGE | - | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="liability"></a> Liability
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Liability |  |  |  |  |  |  |  |  |
+| Name | Liability |  |  |  |  |  |  |  |  |
+| Product Category | liability |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | liability |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | liability |  |  |  |  |  |  |  |  |
+| Termsheet Model | liability |  |  |  |  |  |  |  |  |
+| Term("interestRate") | 0.0 | PERCENTAGE | - | - | - |  | - | - | - |
+| Term("securedBy") |  | HOLDING | - | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="loan"></a> Loan
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Loan |  |  |  |  |  |  |  |  |
+| Name | Loan |  |  |  |  |  |  |  |  |
+| Product Category | liability |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | liability |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | liability |  |  |  |  |  |  |  |  |
+| Termsheet Model | liability |  |  |  |  |  |  |  |  |
+| Term("interestRate") | 4.0 | PERCENTAGE | - | - | - |  | - | - | - |
+| Term("securedBy") |  | HOLDING | - | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="nebenerwerbseinkommen"></a> Nebenerwerbseinkommen
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Nebenerwerbseinkommen |  |  |  |  |  |  |  |  |
+| Name | Nebenerwerbseinkommen |  |  |  |  |  |  |  |  |
+| Product Category | salary |  |  |  |  |  |  |  |  |
+| Tax Code | secondarySalary |  |  |  |  |  |  |  |  |
+| Product Type | flow |  |  |  |  |  |  |  |  |
+| Product Type Group | flow |  |  |  |  |  |  |  |  |
+| Product Model | chSalary |  |  |  |  |  |  |  |  |
+| Termsheet Model | chSalary |  |  |  |  |  |  |  |  |
+| Term("isNetAmount") | true | BOOLEAN | - | - | - | true | - | - | - |
+| Term("chPillarTwo") |  | HOLDING | - | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="payment"></a> Payment
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Payment |  |  |  |  |  |  |  |  |
+| Name | Payment |  |  |  |  |  |  |  |  |
+| Product Category | expense |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | expense |  |  |  |  |  |  |  |  |
+| Product Type Group | flow |  |  |  |  |  |  |  |  |
+| Product Model | expense |  |  |  |  |  |  |  |  |
+| Termsheet Model | cashflow |  |  |  |  |  |  |  |  |
+
+[home](#main)
+
+---
+## <a id="pensionskasse"></a> Pensionskasse
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Pensionskasse |  |  |  |  |  |  |  |  |
+| Name | Pensionskasse |  |  |  |  |  |  |  |  |
+| Product Category | retirement |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | asset |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | chPillarTwo |  |  |  |  |  |  |  |  |
+| Termsheet Model | chPillarTwo |  |  |  |  |  |  |  |  |
+| Term("capitalWithdrawalRate") | 0.0 | PERCENTAGE | - | - | - | 0.0 | - | - | - |
+| Term("availablePurchase") | 0.0 | VALUE | - | - | - | 0.0 | - | - | - |
+| Term("homeOwnership") | 0.0 | VALUE | - | - | - | 0.0 | - | - | - |
+| Term("statementDate") |  | DATE | - | - | - |  | - | - | - |
+| Term("projectedVestedBenefits") |  | VALUE | - | - | - |  | - | - | - |
+| Term("projectedAnnualRetirementPensionMap") |  | TEXT | - | - | - |  | - | - | - |
+| Term("conversionRate") |  | PERCENTAGE | - | - | - |  | - | - | - |
+| Term("annualPension") |  | VALUE | - | - | - |  | - | - | - |
+| Term("pensionStartDate") |  | DATE | + | - | - |  | + | - | - |
+
+[home](#main)
+
+---
+## <a id="profitshare"></a> Profit Share
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Profit Share |  |  |  |  |  |  |  |  |
+| Name | Profit Share |  |  |  |  |  |  |  |  |
+| Product Category | transfer |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | flow |  |  |  |  |  |  |  |  |
+| Product Type Group | flow |  |  |  |  |  |  |  |  |
+| Product Model | profitShare |  |  |  |  |  |  |  |  |
+| Termsheet Model | profitShare |  |  |  |  |  |  |  |  |
+| Term("seqNr") |  | INTEGER | - | - | - |  | - | - | - |
+| Term("fromHolding") |  | HOLDING | - | - | - |  | - | - | - |
+| Term("toHolding") |  | HOLDING | - | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="rent"></a> Rent
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Rent |  |  |  |  |  |  |  |  |
+| Name | Rent |  |  |  |  |  |  |  |  |
+| Product Category | expense |  |  |  |  |  |  |  |  |
+| Tax Code | rent |  |  |  |  |  |  |  |  |
+| Product Type | expense |  |  |  |  |  |  |  |  |
+| Product Type Group | flow |  |  |  |  |  |  |  |  |
+| Product Model | expense |  |  |  |  |  |  |  |  |
+| Termsheet Model | cashflow |  |  |  |  |  |  |  |  |
+
+[home](#main)
+
+---
+## <a id="savingsaccount"></a> Savings Account
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Savings Account |  |  |  |  |  |  |  |  |
+| Name | Savings Account |  |  |  |  |  |  |  |  |
+| Product Category | cash |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | valuable |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | bankAccount |  |  |  |  |  |  |  |  |
+| Termsheet Model | bankAccount |  |  |  |  |  |  |  |  |
+
+[home](#main)
+
+---
+## <a id="savingsplan"></a> Savings Plan
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Savings Plan |  |  |  |  |  |  |  |  |
+| Name | Savings Plan |  |  |  |  |  |  |  |  |
+| Product Category | investment |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | asset |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | investment |  |  |  |  |  |  |  |  |
+| Termsheet Model | investment |  |  |  |  |  |  |  |  |
+| Term("contribution") |  | VALUE | - | - | - |  | - | - | - |
+| Term("contributionPeriodicity") | yearly | PERIODICITY | - | - | - |  | - | - | - |
+| Term("contributionStartDate") |  | DATE | - | - | - |  | - | - | - |
+| Term("contributionEndDate") |  | DATE | - | - | - |  | - | - | - |
+| Term("assetAllocation") | cash100 | ASSET_ALLOCATION | - | - | - |  | - | - | - |
+| Term("withdrawal") |  | AMOUNT | - | - | - |  | - | - | - |
+| Term("withdrawalPeriodicity") |  | PERIODICITY | - | - | - |  | - | - | - |
+| Term("withdrawalStartDate") |  | DATE | - | - | - |  | - | - | - |
+| Term("withdrawalEndDate") |  | DATE | - | - | - |  | - | - | - |
+| Term("managementFee") | 0.0 | PERCENTAGE | + | - | - |  | - | - | - |
+| Term("performanceFee") | 0.0 | PERCENTAGE | + | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="steuernch"></a> Steuern CH
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Steuern CH |  |  |  |  |  |  |  |  |
+| Name | Steuern CH |  |  |  |  |  |  |  |  |
+| Product Category | tax |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | contract |  |  |  |  |  |  |  |  |
+| Product Type Group | contract |  |  |  |  |  |  |  |  |
+| Product Model | chTax |  |  |  |  |  |  |  |  |
+| Termsheet Model | chTax |  |  |  |  |  |  |  |  |
+| Term("hhDeductionInsurance") | 0.0 | VALUE | - | - | - | 0.0 | - | - | - |
+| Term("hhChildCareCosts") | 0.0 | VALUE | - | - | - | 0.0 | - | - | - |
+| Term("hhDeductionOther") | 0.0 | VALUE | - | - | - | 0.0 | - | - | - |
+| Term("p1MainMealCosts") | 0.0 | VALUE | - | - | - | 0.0 | - | - | - |
+| Term("p1MainTravelCosts") | 0.0 | VALUE | - | - | - | 0.0 | - | - | - |
+| Term("p1MainOtherExpenses") | 0.0 | VALUE | - | - | - | 0.0 | - | - | - |
+| Term("p1SecondaryExpenses") | 0.0 | VALUE | - | - | - | 0.0 | - | - | - |
+| Term("p2MainMealCosts") | 0.0 | VALUE | - | - | - | 0.0 | - | - | - |
+| Term("p2MainTravelCosts") | 0.0 | VALUE | - | - | - | 0.0 | - | - | - |
+| Term("p2MainOtherExpenses") | 0.0 | VALUE | - | - | - | 0.0 | - | - | - |
+| Term("p2SecondaryExpenses") | 0.0 | VALUE | - | - | - | 0.0 | - | - | - |
+
+[home](#main)
+
+---
+## <a id="sule3adepot"></a> Säule 3a Depot
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Säule 3a Depot |  |  |  |  |  |  |  |  |
+| Name | Säule 3a Depot |  |  |  |  |  |  |  |  |
+| Product Category | retirement |  |  |  |  |  |  |  |  |
+| Tax Code | 3a |  |  |  |  |  |  |  |  |
+| Product Type | asset |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | investment |  |  |  |  |  |  |  |  |
+| Termsheet Model | investment |  |  |  |  |  |  |  |  |
+| Term("contribution") |  | VALUE | - | - | - |  | - | - | - |
+| Term("contributionPeriodicity") | yearly | PERIODICITY | + | + | - |  | - | - | - |
+| Term("contributionStartDate") |  | DATE | - | - | - |  | - | - | - |
+| Term("contributionEndDate") |  | DATE | - | - | - |  | - | - | - |
+| Term("assetAllocation") | stock60_bond40 | ASSET_ALLOCATION | - | - | - |  | - | - | - |
+| Term("withdrawal") |  | AMOUNT | - | - | - |  | - | - | - |
+| Term("withdrawalPeriodicity") | once | PERIODICITY | + | - | - |  | - | - | - |
+| Term("withdrawalStartDate") |  | DATE | + | - | - |  | - | - | - |
+| Term("withdrawalEndDate") |  | DATE | + | - | - |  | - | - | - |
+| Term("managementFee") | 0.0 | PERCENTAGE | + | + | - |  | - | - | - |
+| Term("performanceFee") | 0.0 | PERCENTAGE | + | + | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="sule3akonto"></a> Säule 3a Konto
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Säule 3a Konto |  |  |  |  |  |  |  |  |
+| Name | Säule 3a Konto |  |  |  |  |  |  |  |  |
+| Product Category | retirement |  |  |  |  |  |  |  |  |
+| Tax Code | 3a |  |  |  |  |  |  |  |  |
+| Product Type | asset |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | investment |  |  |  |  |  |  |  |  |
+| Termsheet Model | investment |  |  |  |  |  |  |  |  |
+| Term("contribution") |  | VALUE | + | - | - |  | - | - | - |
+| Term("contributionPeriodicity") | yearly | PERIODICITY | + | + | - |  | - | - | - |
+| Term("contributionStartDate") |  | DATE | + | - | - |  | - | - | - |
+| Term("contributionEndDate") |  | DATE | + | - | - |  | - | - | - |
+| Term("assetAllocation") | cash100 | ASSET_ALLOCATION | + | + | - |  | - | - | - |
+| Term("withdrawal") |  | AMOUNT | - | - | - |  | - | - | - |
+| Term("withdrawalPeriodicity") | once | PERIODICITY | + | - | - |  | - | - | - |
+| Term("withdrawalStartDate") |  | DATE | + | - | - |  | - | - | - |
+| Term("withdrawalEndDate") |  | DATE | + | - | - |  | - | - | - |
+| Term("managementFee") | 0.0 | PERCENTAGE | + | + | - |  | - | - | - |
+| Term("performanceFee") | 0.0 | PERCENTAGE | + | + | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="transfer"></a> Transfer
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Transfer |  |  |  |  |  |  |  |  |
+| Name | Transfer |  |  |  |  |  |  |  |  |
+| Product Category | transfer |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | flow |  |  |  |  |  |  |  |  |
+| Product Type Group | flow |  |  |  |  |  |  |  |  |
+| Product Model | transfer |  |  |  |  |  |  |  |  |
+| Termsheet Model | transfer |  |  |  |  |  |  |  |  |
+| Term("fromHolding") |  | HOLDING | - | - | - |  | - | - | - |
+| Term("toHolding") |  | HOLDING | - | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="verbrauchsvermgenswert"></a> Verbrauchsvermögenswert
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Verbrauchsvermögenswert |  |  |  |  |  |  |  |  |
+| Name | Verbrauchsvermögenswert |  |  |  |  |  |  |  |  |
+| Product Category | asset |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | asset |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | tangibleAsset |  |  |  |  |  |  |  |  |
+| Termsheet Model | tangibleAsset |  |  |  |  |  |  |  |  |
+| Term("insuranceRate") |  | PERCENTAGE | - | - | - |  | - | - | - |
+| Term("maintenanceRate") |  | PERCENTAGE | - | - | - |  | - | - | - |
+| Term("yieldRate") |  | PERCENTAGE | - | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="wachstumsvermgenswert"></a> Wachstumsvermögenswert
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Wachstumsvermögenswert |  |  |  |  |  |  |  |  |
+| Name | Wachstumsvermögenswert |  |  |  |  |  |  |  |  |
+| Product Category | asset |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | asset |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | tangibleAsset |  |  |  |  |  |  |  |  |
+| Termsheet Model | tangibleAsset |  |  |  |  |  |  |  |  |
+| Term("insuranceRate") |  | PERCENTAGE | - | - | - |  | - | - | - |
+| Term("maintenanceRate") |  | PERCENTAGE | - | - | - |  | - | - | - |
+| Term("yieldRate") |  | PERCENTAGE | - | - | - |  | - | - | - |
+
+[home](#main)
+
+---
+## <a id="zweitehypothek"></a> Zweite Hypothek
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional | TS Value | TS isHidden | TS isFrozen | TS isOptional |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Caption | Zweite Hypothek |  |  |  |  |  |  |  |  |
+| Name | Zweite Hypothek |  |  |  |  |  |  |  |  |
+| Product Category | mortgage |  |  |  |  |  |  |  |  |
+| Tax Code |  |  |  |  |  |  |  |  |  |
+| Product Type | liability |  |  |  |  |  |  |  |  |
+| Product Type Group | valuable |  |  |  |  |  |  |  |  |
+| Product Model | liability |  |  |  |  |  |  |  |  |
+| Termsheet Model | liability |  |  |  |  |  |  |  |  |
+| Term("interestRate") | 3.0 | PERCENTAGE | - | - | - |  | - | - | - |
+| Term("securedBy") |  | HOLDING | - | - | - |  | - | - | - |
+
+[home](#main)
+

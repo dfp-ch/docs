@@ -1,0 +1,248 @@
+---
+title: Termsheet Models
+i18nReady: false
+---
+
+Generated on: 2024-11-19T12:01:13.131192400  
+<a href="/files/ModelOverview.xlsx" download="ModelOverview.xlsx">ModelOverview.xlsx</a>
+
+## <a id="main"></a> Termsheet Models
+
+| Id | Name |
+| --- | --- |
+| [bankAccount](#bankaccount) | Bank Account |
+| [investment](#investment) | Investment |
+| [tangibleAsset](#tangibleasset) | Tangible Asset |
+| [liability](#liability) | Liability |
+| [cashflow](#cashflow) | Cashflow |
+| [alimonyIncome](#alimonyincome) | Alimony (Incoming) |
+| [alimonyExpense](#alimonyexpense) | Alimony (Outgoing) |
+| [transfer](#transfer) | Transfer |
+| [profitShare](#profitshare) | Profit Share |
+| [inception](#inception) | Inception |
+| [relocation](#relocation) | Relocation |
+| [termination](#termination) | Termination |
+| [civilStatusChange](#civilstatuschange) | Civil Status Change |
+| [retirementShift](#retirementshift) | Retirement shift |
+| [chRealEstate](#chrealestate) | CH Real Estate |
+| [chSalary](#chsalary) | CH Salary |
+| [chPillarOne](#chpillarone) | AHV |
+| [chPillarTwo](#chpillartwo) | BVG (Pensionskasse) |
+| [chTax](#chtax) | Steuern CH |
+| [chPillarOneWithdrawal](#chpillaronewithdrawal) | Pillar 1 Withdrawal |
+| [chPillarTwoWithdrawal](#chpillartwowithdrawal) | Pillar 2 Withdrawal |
+| [chPillarThreeARedemption](#chpillarthreearedemption) | Pillar 3a Redemption |
+
+---
+## <a id="investment"></a> investment
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("contribution") |  | VALUE | - | - | - |
+| Term("contributionPeriodicity") |  | PERIODICITY | - | - | - |
+| Term("contributionStartDate") |  | DATE | - | - | - |
+| Term("contributionEndDate") |  | DATE | - | - | - |
+| Term("assetAllocation") |  | ASSET_ALLOCATION | - | - | - |
+| Term("withdrawal") |  | AMOUNT | - | - | - |
+| Term("withdrawalPeriodicity") |  | PERIODICITY | - | - | - |
+| Term("withdrawalStartDate") |  | DATE | - | - | - |
+| Term("withdrawalEndDate") |  | DATE | - | - | - |
+| Term("managementFee") |  | PERCENTAGE | - | - | - |
+| Term("performanceFee") |  | PERCENTAGE | - | - | - |
+
+[home](#main)
+
+---
+## <a id="tangibleasset"></a> tangibleAsset
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("insuranceRate") |  | PERCENTAGE | - | - | - |
+| Term("maintenanceRate") |  | PERCENTAGE | - | - | - |
+| Term("yieldRate") |  | PERCENTAGE | - | - | - |
+
+[home](#main)
+
+---
+## <a id="liability"></a> liability
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("interestRate") |  | PERCENTAGE | - | - | - |
+| Term("securedBy") |  | HOLDING | - | - | - |
+
+[home](#main)
+
+---
+## <a id="alimonyincome"></a> alimonyIncome
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("payer") |  | MEMBER | - | - | - |
+
+[home](#main)
+
+---
+## <a id="alimonyexpense"></a> alimonyExpense
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("recipient") |  | MEMBER | - | - | - |
+
+[home](#main)
+
+---
+## <a id="transfer"></a> transfer
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("fromHolding") |  | HOLDING | - | - | - |
+| Term("toHolding") |  | HOLDING | - | - | - |
+
+[home](#main)
+
+---
+## <a id="profitshare"></a> profitShare
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("seqNr") |  | INTEGER | - | - | - |
+| Term("fromHolding") |  | HOLDING | - | - | - |
+| Term("toHolding") |  | HOLDING | - | - | - |
+
+[home](#main)
+
+---
+## <a id="relocation"></a> relocation
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("destinationZip") |  | TEXT | - | - | - |
+
+[home](#main)
+
+---
+## <a id="termination"></a> termination
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("share") |  | PERCENTAGE | - | - | - |
+
+[home](#main)
+
+---
+## <a id="civilstatuschange"></a> civilStatusChange
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("newCivilStatus") |  | CIVIL_STATUS | - | - | - |
+
+[home](#main)
+
+---
+## <a id="retirementshift"></a> retirementShift
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("retirementShiftMonths") |  | TEXT | - | - | - |
+
+[home](#main)
+
+---
+## <a id="chrealestate"></a> chRealEstate
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("fiscalValue") |  | VALUE | - | - | - |
+| Term("imputedRentalValue") |  | VALUE | - | - | - |
+| Term("isSelfOccupied") |  | BOOLEAN | - | - | - |
+| Term("rentalIncome") |  | AMOUNT | - | - | - |
+| Term("maintenanceRate") |  | PERCENTAGE | - | - | - |
+
+[home](#main)
+
+---
+## <a id="chsalary"></a> chSalary
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("isNetAmount") | true | BOOLEAN | - | - | - |
+| Term("chPillarTwo") |  | HOLDING | - | - | - |
+
+[home](#main)
+
+---
+## <a id="chpillarone"></a> chPillarOne
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("annualPension44") |  | VALUE | - | - | - |
+| Term("missingContributionYears") | 0 | INTEGER | - | - | - |
+| Term("pensionStartDate") |  | DATE | + | - | - |
+
+[home](#main)
+
+---
+## <a id="chpillartwo"></a> chPillarTwo
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("capitalWithdrawalRate") | 0.0 | PERCENTAGE | - | - | - |
+| Term("availablePurchase") | 0.0 | VALUE | - | - | - |
+| Term("homeOwnership") | 0.0 | VALUE | - | - | - |
+| Term("statementDate") |  | DATE | - | - | - |
+| Term("projectedVestedBenefits") |  | VALUE | - | - | - |
+| Term("projectedAnnualRetirementPensionMap") |  | TEXT | - | - | - |
+| Term("conversionRate") |  | PERCENTAGE | - | - | - |
+| Term("annualPension") |  | VALUE | - | - | - |
+| Term("pensionStartDate") |  | DATE | + | - | - |
+
+[home](#main)
+
+---
+## <a id="chtax"></a> chTax
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("hhDeductionInsurance") | 0.0 | VALUE | - | - | - |
+| Term("hhChildCareCosts") | 0.0 | VALUE | - | - | - |
+| Term("hhDeductionOther") | 0.0 | VALUE | - | - | - |
+| Term("p1MainMealCosts") | 0.0 | VALUE | - | - | - |
+| Term("p1MainTravelCosts") | 0.0 | VALUE | - | - | - |
+| Term("p1MainOtherExpenses") | 0.0 | VALUE | - | - | - |
+| Term("p1SecondaryExpenses") | 0.0 | VALUE | - | - | - |
+| Term("p2MainMealCosts") | 0.0 | VALUE | - | - | - |
+| Term("p2MainTravelCosts") | 0.0 | VALUE | - | - | - |
+| Term("p2MainOtherExpenses") | 0.0 | VALUE | - | - | - |
+| Term("p2SecondaryExpenses") | 0.0 | VALUE | - | - | - |
+
+[home](#main)
+
+---
+## <a id="chpillaronewithdrawal"></a> chPillarOneWithdrawal
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("pensionStartShiftMonths") |  | INTEGER | - | - | - |
+
+[home](#main)
+
+---
+## <a id="chpillartwowithdrawal"></a> chPillarTwoWithdrawal
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("pensionStartShiftMonths") |  | INTEGER | - | - | - |
+| Term("capitalWithdrawalRate") | 0.0 | PERCENTAGE | - | - | - |
+
+[home](#main)
+
+---
+## <a id="chpillarthreearedemption"></a> chPillarThreeARedemption
+
+| Field | Value | Term Type | isHidden | isFrozen | isOptional |
+| --- | --- | --- | --- | --- | --- |
+| Term("redemptionShiftMonths") |  | INTEGER | - | - | - |
+
+[home](#main)
+

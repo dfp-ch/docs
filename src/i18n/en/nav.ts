@@ -21,10 +21,12 @@ export default [
 
 	{ text: 'Application Server', header: true, type: 'learn', key: 'app_server' },
 	{ text: 'Domain Model', slug: 'app_server/domain_model/docs', key: 'app_server/domain_model/docs' },
-	{ text: 'Products', slug: 'app_server/products/products', key: 'app_server/products/products' },
+	{ text: 'Holding Products', slug: 'app_server/holding_products/holding_products', key: 'app_server/holding_products/holding_products' },
+	{ text: 'Goal Products', slug: 'app_server/goal_products/goal_products', key: 'app_server/goal_products/goal_products' },
+	{ text: 'Action Products', slug: 'app_server/action_products/action_products', key: 'app_server/action_products/action_products' },
 	{ text: 'Product Models', slug: 'app_server/product_models/product_models', key: 'app_server/product_models/product_models' },
-	{ text: 'Termsheets', slug: 'app_server/termsheets/termsheet_models', key: 'app_server/termsheets/termsheet_models' },
-	{ text: 'Holdings', slug: 'app_server/holdings/holdings', key: 'app_server/holdings/holdings' },
+	{ text: 'Termsheet Models', slug: 'app_server/termsheet_models/termsheet_models', key: 'app_server/termsheet_models/termsheet_models' },
+	{ text: 'References', slug: 'app_server/references/references', key: 'app_server/references/references' },
 	{ text: 'ADR', slug: 'app_server/adr/adr', key: 'app_server/adr/adr' },
 
 	{ text: 'fincast', header: true, type: 'learn', key: 'fincast' },
