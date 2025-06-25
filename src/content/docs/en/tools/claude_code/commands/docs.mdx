@@ -1,0 +1,48 @@
+---
+title: Commands
+i18nReady: false
+---
+
+# Commands
+
+## Native CLI Commands
+
+These are the built-in CLI commands available in Claude Code:
+
+- `claude` - Start interactive REPL (Read-Eval-Print Loop) for conversational development sessions
+- `claude "query"` - Start REPL with an initial prompt to immediately begin working on a specific task
+- `claude -p "query"` - Query via SDK and exit, useful for quick one-off questions or commands
+- `claude -c` - Continue most recent conversation, picking up where you left off in your last session
+- `claude -c -p "query"` - Continue conversation via SDK with a new prompt while maintaining context
+- `claude -r "<session-id>" "query"` - Resume a specific session by ID when you have multiple conversation threads
+- `claude update` - Update to latest version to ensure you have the newest features and improvements
+- `claude mcp` - Configure Model Context Protocol (MCP) servers for extended functionality and integrations
+
+## Native Slash Commands
+
+These slash commands are available within Claude Code interactive sessions:
+
+- `/add-dir` - Add additional working directories to the current session context
+- `/bug` - Report bugs by sending conversation details to Anthropic for investigation
+- `/clear` - Clear conversation history and start fresh within the current session
+- `/compact [instructions]` - Compact conversation with optional focus instructions to reduce context
+- `/config` - View or modify Claude Code configuration settings permanently
+- `/cost` - Show token usage statistics and billing information for the current session
+- `/doctor` - Perform health checks on your Claude Code installation and environment
+- `/help` - Get usage help and display available commands and features
+- `/init` - Initialize project with CLAUDE.md guide for better context management
+- `/login` - Switch between different Anthropic accounts or re-authenticate
+- `/logout` - Sign out from your current Anthropic account
+- `/mcp` - Manage Model Context Protocol server connections and OAuth authentication
+- `/memory` - Edit CLAUDE.md memory files to customize project context and preferences
+- `/model` - Select or change the AI model being used for the current session
+- `/permissions` - View or update file and directory access permissions
+- `/pr_comments` - View and manage pull request comments within the development workflow
+- `/review` - Request code review for changes made during the session
+- `/status` - View account status, system health, and current session information
+- `/terminal-setup` - Install Shift+Enter key binding for newlines in terminal environments
+- `/vim` - Enter vim mode for alternating insert and command modes with familiar vim keybindings
+
+## Additional Commands
+
+This section will be populated with custom commands and workflows specific to our development environment and processes.
