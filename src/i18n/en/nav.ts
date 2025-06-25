@@ -45,6 +45,17 @@ export default [
 	{ text: 'Development', slug: 'infrastructure/development/docs', key: 'infrastructure/development/docs' },
 	{ text: 'Microsoft', slug: 'infrastructure/microsoft/docs', key: 'infrastructure/microsoft/docs' },
 
+	{ text: 'Tools', header: true, type: 'learn', key: 'tools' },
+	{ text: 'Claude Code', header: true, type: 'learn', key: 'tools/claude_code', nested: true },
+	{ text: 'Introduction', slug: 'tools/claude_code/introduction/docs', key: 'tools/claude_code/introduction/docs' },
+	{ text: 'Installation', slug: 'tools/claude_code/installation/docs', key: 'tools/claude_code/installation/docs' },
+	{ text: 'Best Practices', slug: 'tools/claude_code/best_practices/docs', key: 'tools/claude_code/best_practices/docs' },
+	{ text: 'Memory', slug: 'tools/claude_code/memory/docs', key: 'tools/claude_code/memory/docs' },
+	{ text: 'Commands', slug: 'tools/claude_code/commands/docs', key: 'tools/claude_code/commands/docs' },
+	{ text: 'External: repos', slug: 'tools/claude_code/external_repos/docs', key: 'tools/claude_code/external_repos/docs' },
+	{ text: 'External: docs', slug: 'tools/claude_code/external_docs/docs', key: 'tools/claude_code/external_docs/docs' },
+	{ text: 'External: videos', slug: 'tools/claude_code/videos', key: 'tools/claude_code/videos' },
+
 ] satisfies NavEntry[];
 
 type NavEntry = {
