@@ -5,7 +5,507 @@ i18nReady: false
 
 # Claude Code Best Practices
 
-## Project Setup
+A comprehensive guide to maximizing productivity and effectiveness when using Claude Code in your development workflow.
+
+## Essential Setup & Configuration
+
+### Memory Management with CLAUDE.md
+Create a comprehensive `CLAUDE.md` file in your project root to provide context and guidelines:
+
+```markdown
+# Project Context
+- Tech stack: React, TypeScript, Node.js
+- Architecture: Microservices with MongoDB
+- Testing: Jest with React Testing Library
+- CI/CD: GitHub Actions
+
+## Development Commands
+- `npm run dev` - Start development server
+- `npm test` - Run test suite
+- `npm run lint` - Check code style
+- `npm run build` - Production build
+
+## Code Style Guidelines
+- Use TypeScript strict mode
+- Follow ESLint configuration
+- Prefer functional components
+- Use descriptive variable names
+
+## Repository Etiquette
+- Always run tests before committing
+- Use conventional commit messages
+- Create PR descriptions with screenshots
+- Update documentation for API changes
+
+## Developer Environment
+- Node.js 18+ required
+- Use pnpm as package manager
+- VS Code with recommended extensions
+- Docker for local database
+
+## Known Issues & Warnings
+- API rate limits apply after 1000 requests/hour
+- File uploads limited to 10MB
+- WebSocket connections timeout after 30 minutes
+```
+
+### Tool Permissions Configuration
+Customize Claude's capabilities for your security needs:
+
+```bash
+# View current permissions
+/permissions
+
+# Allow specific tools only
+/permissions allow bash read write edit
+
+# Disable potentially risky operations
+/permissions deny bash
+```
 
 ### Use the # Shortcut
-The fastest way to add a memory is to start your input with the # character. You'll be prompted to select which memory file to store this in, making it easy to build up your CLAUDE.md file over time.
+The fastest way to add memory is to start your input with the `#` character. You'll be prompted to select which memory file to store information in, making it easy to build up your CLAUDE.md file over time.
+
+### Enhanced GitHub Integration
+Install GitHub CLI for seamless integration:
+```bash
+# Install GitHub CLI
+gh auth login
+
+# Claude can now create PRs, manage issues, and more
+```
+
+### Advanced Configuration with .claude Directory
+Create a `.claude/` directory structure for team-wide configuration:
+
+```bash
+.claude/
+├── settings.json          # Shared team defaults
+├── settings.local.json    # Personal overrides (gitignored)
+└── commands/             # Custom slash commands
+    ├── deploy.md
+    ├── test-suite.md
+    └── code-review.md
+```
+
+#### Team Settings Configuration
+**`.claude/settings.json`**:
+```json
+{
+  "allowedActions": [
+    "Bash(npm run *)",
+    "Bash(git *)",
+    "Bash(docker-compose *)"
+  ],
+  "environmentVariables": {
+    "NODE_ENV": "development",
+    "DEBUG": "app:*"
+  },
+  "coAuthorshipEnabled": true,
+  "defaultCommitStyle": "conventional"
+}
+```
+
+**`.claude/settings.local.json`** (personal overrides):
+```json
+{
+  "preferredEditor": "vscode",
+  "autoCommit": false,
+  "verboseLogging": true
+}
+```
+
+### Streamlined CLAUDE.md Structure
+Focus on essential information for better performance:
+
+```markdown
+# Project Goals & Definition of Done
+- Feature complete with 90% test coverage
+- Performance under 2s load time
+- Accessibility compliance (WCAG 2.1)
+- Security audit passed
+
+## Essential Commands
+- `npm run dev` - Development server
+- `npm run test:watch` - Continuous testing
+- `npm run build` - Production build
+- `npm run deploy:staging` - Deploy to staging
+
+## Git Workflow
+- Feature branches from `main`
+- Squash merge for clean history
+- PR requires 2 approvals
+- Auto-deploy to staging on merge
+
+## Testing Approach
+- Unit tests for utilities
+- Integration tests for API endpoints
+- E2E tests for critical user flows
+- Manual testing checklist in `/docs/testing.md`
+
+## FAQs
+Q: How do I reset the database?
+A: `npm run db:reset`
+
+Q: Where are environment variables defined?
+A: `.env.local` for development, Vercel dashboard for production
+```
+
+## Proven Development Workflows
+
+### The Explore-Plan-Code-Commit Pattern
+Follow this structured approach for complex tasks:
+
+1. **Explore Phase**
+   ```bash
+   "Read the authentication module files and understand the current login flow"
+   ```
+
+2. **Plan Phase**
+   ```bash
+   "Create a detailed plan for adding OAuth2 authentication. Break it into steps and identify potential issues."
+   ```
+
+3. **Think Mode** (for complex problems)
+   ```bash
+   "Think through the security implications of this OAuth implementation"
+   ```
+
+4. **Code Phase**
+   ```bash
+   "Implement the first step of the OAuth plan. Focus on the authorization endpoint."
+   ```
+
+5. **Commit Phase**
+   ```bash
+   "Create a commit with a clear message describing what was implemented"
+   ```
+
+### Test-Driven Development with Claude
+Ensure robust implementations:
+
+1. **Write Tests First**
+   ```bash
+   "Write comprehensive tests for the user authentication service before implementing it"
+   ```
+
+2. **Verify Tests Fail**
+   ```bash
+   "Run the tests to confirm they fail as expected"
+   ```
+
+3. **Implement Solution**
+   ```bash
+   "Implement the authentication service to make all tests pass"
+   ```
+
+4. **Validate Implementation**
+   ```bash
+   "Run tests again and check for any over-fitting or shortcuts in the implementation"
+   ```
+
+### Visual Iteration Approach
+For UI/UX development:
+
+1. **Provide Visual Context**
+   - Upload screenshots or mockups
+   - Share design specifications
+   - Include brand guidelines
+
+2. **Implement and Screenshot**
+   ```bash
+   "Implement this design and take a screenshot of the result"
+   ```
+
+3. **Iterate 2-3 Times**
+   ```bash
+   "The spacing looks off in the screenshot. Adjust the padding and show me the updated version."
+   ```
+
+## Advanced Productivity Techniques
+
+### Parallel Development with Git Worktrees
+Work on multiple features simultaneously:
+
+```bash
+# Create worktree for new feature
+git worktree add ../feature-branch feature-branch
+
+# Start Claude in the new worktree
+cd ../feature-branch && claude
+```
+
+Benefits:
+- Run separate Claude Code instances in different branches
+- Avoid context switching overhead
+- Eliminate the need for stashing changes
+- Maintain separate development environments
+
+### Headless Mode for Automation
+Integrate Claude into CI/CD pipelines:
+
+```bash
+# Run Claude commands programmatically
+claude --headless "Run tests and fix any failures"
+
+# Use in shell scripts
+#!/bin/bash
+claude --headless "Update all dependencies and resolve conflicts"
+```
+
+### Custom Slash Commands
+Create reusable workflows as markdown files in `.claude/commands/`:
+
+**`.claude/commands/deploy.md`**:
+```markdown
+# Deploy to Staging
+
+1. Run full test suite
+2. Build production assets
+3. Deploy to staging environment
+4. Run smoke tests
+5. Notify team in Slack
+
+Commands:
+- `npm run test:all`
+- `npm run build`
+- `npm run deploy:staging`
+- `npm run test:smoke`
+```
+
+**`.claude/commands/code-review.md`**:
+```markdown
+# Code Review Checklist
+
+1. Check test coverage (minimum 80%)
+2. Verify no console.log statements
+3. Ensure proper error handling
+4. Validate TypeScript types
+5. Run security audit
+6. Generate PR description with screenshots
+
+Commands:
+- `npm run test:coverage`
+- `npm run lint:no-console`
+- `npm audit`
+```
+
+### Built-in Slash Commands
+Leverage these powerful built-in commands:
+
+```bash
+/clear          # Reset conversation context
+/review         # Request comprehensive code review
+/memory         # Quick edit of project guide
+/init           # Initialize CLAUDE.md file
+/plan "goal"    # Create structured task breakdown
+/finish-work    # Commit changes and create PR
+```
+
+### Optimized Developer Loop
+Follow this proven 8-step workflow for maximum productivity:
+
+1. **Reset Context**: `/clear` to start fresh
+2. **Plan Tasks**: `/plan "implement user authentication"`
+3. **Clarify Requirements**: Discuss edge cases and acceptance criteria
+4. **Approve Task**: Confirm the plan before implementation
+5. **Plan Execution**: Break down implementation and testing strategy
+6. **Execute & Test**: Implement code with continuous testing
+7. **Finish Work**: `/finish-work` to commit and create PR
+8. **Clear Again**: `/clear` for next task cycle
+
+### Bulk-Fix Workflows
+For systematic code improvements:
+
+```bash
+# Example: Update all deprecated API calls
+"Find all instances of the old API calls in the codebase and create a plan to update them to the new format. Process 5 files at a time."
+
+# Example: Security hardening
+"Review all authentication-related files and apply consistent security patterns. Focus on input validation and error handling."
+
+# Example: Performance optimization
+"Identify performance bottlenecks in React components and implement memoization where beneficial."
+```
+
+### Multiple Claude Instances Strategy
+Leverage parallel processing:
+
+- **Instance 1**: Frontend development
+- **Instance 2**: Backend API work  
+- **Instance 3**: Testing and QA
+- **Instance 4**: Documentation updates
+
+## Communication Best Practices
+
+### Be Specific and Direct
+```bash
+# Vague
+"Fix the login issue"
+
+# Specific
+"In UserService.ts line 45, the JWT expiration check is using wrong timezone. Fix to use UTC and add proper error handling"
+
+# Even Better
+"The JWT token validation in UserService.ts:45 fails for users in different timezones. Update the expiration check to use UTC timestamps and add error logging for debugging failed authentications."
+```
+
+### Provide Rich Context
+```bash
+# Include relevant background
+"The payment processing module needs to handle new EU regulations. See CLAUDE.md section 'Compliance Requirements' and update the validation logic in PaymentValidator.ts to include GDPR consent checks."
+```
+
+### Course-Correct Early
+Don't let Claude go down the wrong path:
+```bash
+# When you notice issues
+"Stop - that approach won't work with our current authentication system. Let's use the existing JWT middleware instead."
+```
+
+### Use Context Management Commands
+```bash
+# Clear context when switching topics
+/clear
+
+# Focus on specific areas
+"Focus only on the frontend components for this discussion"
+```
+
+## Code Quality & Security Guidelines
+
+### Security-First Development
+- Always review generated code for security implications
+- Use secure coding practices in prompts:
+  ```bash
+  "Add input validation, SQL injection protection, and rate limiting to this API endpoint"
+  ```
+- Never commit secrets or API keys
+- Validate authentication and authorization logic
+
+### Maintain Project Conventions
+- Claude Code adapts to your existing code style
+- Ensure consistent naming conventions
+- Maintain architectural patterns established in your codebase
+- Follow established error handling patterns
+
+### Quality Assurance Integration
+```bash
+# Integrate quality checks
+"After implementing this feature, run the full test suite, linting, and security audit"
+
+# Code review preparation
+"Generate a comprehensive PR description with testing instructions and security considerations"
+```
+
+## Troubleshooting & Optimization
+
+### Context Management Issues
+If Claude seems to lack project context:
+- Ensure CLAUDE.md is comprehensive and up-to-date
+- Provide specific file paths and line numbers
+- Share relevant error messages and logs
+- Use the `/clear` command to reset context when switching topics
+
+### Performance Optimization
+- **Break large tasks** into smaller, focused requests
+- **Use specific file targeting** rather than broad searches
+- **Maintain clean project structure** for better navigation
+- **Batch related operations** together for efficiency
+
+### Common Integration Challenges
+- **Network connectivity**: Review API access and firewall settings
+- **Authentication issues**: Verify API key configuration
+- **Corporate environments**: Check proxy and security policies
+- **Tool permissions**: Ensure Claude has necessary access rights
+
+## Advanced Features & Integrations
+
+### Subagent Pattern
+For complex problem-solving:
+```bash
+"Create a subagent to handle the database migration while we work on the API endpoints"
+```
+
+### Enterprise Integration
+- **Amazon Bedrock**: Enterprise-grade deployment
+- **Google Vertex AI**: Cloud-native integration  
+- **Development Containers**: Consistent team environments
+- **Corporate Proxies**: Seamless network integration
+
+### Automated Workflows
+```bash
+# Set up automated processes
+"Configure Claude to run tests after every code change and report results"
+
+# Pre-commit automation
+"Set up a workflow to automatically lint, format, and test code before commits"
+```
+
+## Measuring Success
+
+### Productivity Metrics
+Track your improvement:
+- Time to complete development tasks
+- Code review feedback quality
+- Test coverage improvements
+- Bug reduction in production
+
+### Best Practice Adoption
+- Regular CLAUDE.md updates
+- Consistent workflow patterns
+- Team knowledge sharing
+- Documentation quality improvements
+
+### Continuous Improvement
+- Experiment with new Claude Code features
+- Adapt workflows based on project needs
+- Share successful patterns with your team
+- Provide feedback to improve Claude Code
+
+### The Reflection Command
+Periodically optimize your setup with reflection:
+
+```bash
+"Review our current CLAUDE.md file and suggest improvements based on recent development patterns. What information is missing or outdated?"
+
+"Analyze our recent commits and suggest updates to our development workflow. Are there repetitive tasks we could automate?"
+
+"Look at our project structure and recommend optimizations for Claude Code integration. What configuration changes would improve productivity?"
+```
+
+## Quick Start Checklist
+
+### Team Onboarding
+For new projects or team members:
+
+1. **Setup Configuration**
+   - [ ] Create `.claude/settings.json` with team defaults
+   - [ ] Add `.claude/settings.local.json` to `.gitignore`
+   - [ ] Define common slash commands in `.claude/commands/`
+
+2. **Document Project Context**
+   - [ ] Initialize CLAUDE.md with `/init`
+   - [ ] Define project goals and definition of done
+   - [ ] Document essential commands and workflows
+   - [ ] Add FAQs for common development questions
+
+3. **Configure Permissions**
+   - [ ] Set up tool permissions with `/permissions`
+   - [ ] Whitelist npm run patterns: `"Bash(npm run *)"`
+   - [ ] Enable GitHub CLI integration
+
+4. **Establish Workflows**
+   - [ ] Train team on the 8-step developer loop
+   - [ ] Create custom commands for deployment and testing
+   - [ ] Set up bulk-fix patterns for code maintenance
+
+### Pro Tips Summary
+- **"Many teams whitelist the entire `npm run *` pattern so every present or future script runs without extra prompts"**
+- **Start every work session with `/clear` to ensure focused context**
+- **Use `/plan` before complex implementations to break down tasks**
+- **Create markdown files in `.claude/commands/` for reusable workflows**
+- **Implement the reflection command monthly to optimize your setup**
+- **Focus CLAUDE.md on essential information - less is more**
+
+The goal is to make Claude Code feel like **"a senior dev who already knows your stack, rules, and ticketing system."**

@@ -17,6 +17,69 @@ This comprehensive Windows installation guide provides a detailed walkthrough fo
 
 For general installation instructions across all platforms, refer to the [official Claude Code documentation](https://docs.anthropic.com/en/docs/claude-code/quickstart).
 
+## Setup after Installation
+
+Additional configuration steps to optimize your Claude Code environment, particularly useful for Windows/WSL users working with Maven projects.
+
+### Maven Windows Wrapper Setup
+
+Maven does not run smoothly from WSL (if both Maven and Repo are not in WSL; and IntelliJ in WSL is not straight-forward, I was not able to get it to work).  
+Therefore, a wrapper script is provided to facilitate running Maven commands from WSL while ensuring compatibility with Windows paths and exit codes. 
+CLAUDE.md will then be taught to always use the `mvn-win` wrapper instead of the standard `mvn` command.
+
+1. **Create the wrapper script:**
+   ```bash
+   nano ~/bin/mvn-win
+   ```
+
+2. **Add the wrapper content:**
+   ```bash
+   #!/bin/bash
+   # Full-featured wrapper
+
+   WIN_PATH=$(wslpath -w "$PWD")
+   TEMP_FILE=$(mktemp)
+
+   # Run Maven, capture exit code
+   cmd.exe /c "cd /d $WIN_PATH && mvn $* && echo %ERRORLEVEL% > $TEMP_FILE" 2>&1
+
+   # Get Windows exit code
+   EXIT_CODE=$(cat $TEMP_FILE)
+   rm $TEMP_FILE
+
+   # Exit with same code
+   exit ${EXIT_CODE:-0}
+   ```
+
+3. **Make the script executable:**
+   ```bash
+   chmod +x ~/bin/mvn-win
+   ```
+
+4. **Add to PATH:**
+   ```bash
+   nano ~/.bashrc
+   ```
+   
+   Add the following line:
+   ```bash
+   export PATH="$HOME/bin:$PATH"
+   ```
+
+5. **Reload your shell configuration:**
+   ```bash
+   source ~/.bashrc
+   ```
+
+6. **Usage:**
+   Replace `mvn` with `mvn-win` for your Maven commands:
+   ```bash
+   mvn-win clean install
+   mvn-win spring-boot:run
+   ```
+
+This wrapper ensures proper path conversion between WSL and Windows environments, maintaining accurate exit codes for build processes.
+
 ## Alternative Beginner Setup Guide
 
 **Resource:** [Comprehensive Beginner Installation Guide](https://phpfashion.com/en/how-to-install-claude-code-beginners-guide)
