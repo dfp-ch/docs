@@ -1,7 +1,7 @@
 # CLAUDE.md - Claude Code Tools Documentation
 
 ## Scope
-This memory file is **ONLY applicable to the Best Practices section** at `/src/content/docs/en/tools/claude_code/best_practices/docs.mdx`. 
+This memory file is **ONLY applicable to the Best Practices section** at `/src/content/docs/en/development/claude_code/best_practices/docs.mdx`. 
 
 Do not apply these guidelines to other parts of the documentation site.
 

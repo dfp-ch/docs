@@ -100,3 +100,24 @@ The site heavily customizes Starlight with:
   - Update `config/sidebar.ts` to add new navigation entries
   - Ensure consistent formatting and follow existing documentation style
   - Add images or diagrams in the same directory, preferably using Excalidraw format
+
+### Navigation Configuration
+- Navigation structure is defined in `src/i18n/en/nav.ts`
+- Each entry requires `text`, `key`, and either `slug` or `header: true`
+- Use `nested: true` for sub-sections under a main heading
+- Use `collapsed: true` to collapse sections by default
+- Sidebar is auto-generated from nav.ts via `config/sidebar.ts`
+
+### Testing and Validation
+- Always run link checking after content changes: `pnpm lint:linkcheck`
+- Use autofix for minor link issues: link checker has built-in autofix capability
+- Test accessibility: `pnpm lint:a11y` 
+- Validate slug uniqueness: `pnpm lint:slugcheck`
+- Check build integrity: `pnpm build` before committing
+
+### Content Standards
+- Use MDX for rich content with custom components
+- Store Excalidraw files alongside content (.excalidraw + exported .png)
+- Follow existing domain structure: concepts/, adr/, products/, etc.
+- Use consistent heading hierarchy (# for page title, ## for main sections)
+- Include frontmatter with title and description for SEO
