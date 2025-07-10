@@ -1,0 +1,31 @@
+---
+title: Preconditions
+description: Prerequisites for using Claude Code
+---
+
+## Windows
+
+- Install Ubuntu on WSL
+  - further downloads/installation in WSL/Ubuntu filesystem!
+
+
+## General
+
+- Install PlantUML (download plantuml.jar) - see [PlantUML Getting Started](https://plantuml.com/starting)
+
+- Install ktlint
+
+```bash
+# Download ktlint
+curl -sSLO https://github.com/pinterest/ktlint/releases/latest/download/ktlint
+
+# Make it executable
+chmod a+x ktlint
+
+# Move to system path
+sudo mv ktlint /usr/local/bin/
+
+# Verify installation
+ktlint --version
+```
+
