@@ -80,6 +80,33 @@ CLAUDE.md will then be taught to always use the `mvn-win` wrapper instead of the
 
 This wrapper ensures proper path conversion between WSL and Windows environments, maintaining accurate exit codes for build processes.
 
+### Whitelist Windows Programs
+
+Per default WSL will include all Windows programs in the PATH, which can lead to issues with certain commands (f.ex. nodejs).
+If you want/need to whitelist specific Windows programs, you can do so by modifying your WSL configuration.
+
+1. **Open WSL configuration file:**
+	 ```bash
+	 nano /etc/wsl.conf
+	 ```
+2. **Add the following configuration:**
+	 ```ini
+	 [interop]
+	 appendWindowsPath = false
+	 ```
+
+3. **Whitelist windows directories:**
+Add the directories of the Windows programs you want to whitelist to `~/.bashrc` as described above.
+
+	 ```bash
+   export PATH="$HOME/bin:$PATH:/mnt/c/Windows/System32:/mnt/c/Windows"
+	 ```
+
+4. **Restart WSL from Windows console (CMD):**
+	 ```bash
+	 wsl --shutdown
+	 ```
+
 ## Alternative Beginner Setup Guide
 
 **Resource:** [Comprehensive Beginner Installation Guide](https://phpfashion.com/en/how-to-install-claude-code-beginners-guide)
