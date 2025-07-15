@@ -1,0 +1,30 @@
+---
+title: Preconditions
+i18nReady: false
+---
+
+# IDE: IntelliJ
+## Plugin: ktlint
+- Install https://plugins.jetbrains.com/plugin/15057-ktlint
+- Update Settings -> Tools -> Actions on Save: 
+  - Enable: `Format with ktlint`
+- Update Settings -> Tools -> KtLint
+  - Enable: `Mode` -> `Distract free (recommended)`
+  - Enable: `on save`
+
+# Agentic: Claude Code
+## Install helper libraries *in WSL/Ubuntu*
+- Clone `app-server` git repository: https://github.com/dfp-ch/app-server
+- Open WSL terminal in the `app-server`'s root directory
+- Run the following commands to install dependencies:
+```./scripts/wsl-install-libraries```
+- Note: `wsl-uninstall-libraries` does uninstall the libraries again
+
+# GIT
+## Install hooks *in GitBash (on Windows)*
+- <span style="color: red;">**ATTENTION: This does not work yet**</span>
+- *Clone `app-server` git repository: https://github.com/dfp-ch/app-server*
+- *Open WSL terminal in the `app-server`'s root directory*
+- *Run the following commands to install dependencies:*
+```./scripts/bash-install-git-hooks```
+- *Note: `bash-uninstall-git-hooks` does uninstall the hooks again*

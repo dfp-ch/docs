@@ -46,9 +46,11 @@ export default [
 	{ text: 'Microsoft', slug: 'infrastructure/microsoft/docs', key: 'infrastructure/microsoft/docs' },
 
 	{ text: 'Development', header: true, type: 'learn', key: 'development' },
+	{ text: 'Preconditions', header: true, type: 'learn', key: 'development/preconditions', nested: true },
+	{ text: 'Overview', slug: 'development/preconditions/docs', key: 'development/preconditions/docs' },
 	{ text: 'IDE: IntelliJ', header: true, type: 'learn', key: 'development/intellij', nested: true },
 	{ text: 'Plugins', slug: 'development/intellij/plugins', key: 'development/intellij/plugins' },
-	{ text: 'Claude Code', header: true, type: 'learn', key: 'development/claude_code', nested: true },
+	{ text: 'Agentic: Claude Code', header: true, type: 'learn', key: 'development/claude_code', nested: true },
 	{ text: 'Introduction', slug: 'development/claude_code/introduction/docs', key: 'development/claude_code/introduction/docs' },
 	{ text: 'Preconditions', slug: 'development/claude_code/preconditions/docs', key: 'development/claude_code/preconditions/docs' },
 	{ text: 'Installation', slug: 'development/claude_code/installation/docs', key: 'development/claude_code/installation/docs' },
