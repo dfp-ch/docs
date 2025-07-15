@@ -13,18 +13,18 @@ i18nReady: false
   - Enable: `on save`
 
 # Agentic: Claude Code
-## Install helper libraries *in WSL/Ubuntu*
+## Install helper libraries *in GitBash*
 - Clone `app-server` git repository: https://github.com/dfp-ch/app-server
-- Open WSL terminal in the `app-server`'s root directory
+- Open GitBash terminal in the `app-server`'s root directory (**ADMIN MODE**)
 - Run the following commands to install dependencies:
-```./scripts/wsl-install-libraries```
-- Note: `wsl-uninstall-libraries` does uninstall the libraries again
+```./scripts/install-libraries```
+- Note: `uninstall-libraries` does uninstall the libraries again
 
 # GIT
-## Install hooks *in GitBash (on Windows)*
-- <span style="color: red;">**ATTENTION: This does not work yet**</span>
-- *Clone `app-server` git repository: https://github.com/dfp-ch/app-server*
-- *Open WSL terminal in the `app-server`'s root directory*
-- *Run the following commands to install dependencies:*
-```./scripts/bash-install-git-hooks```
-- *Note: `bash-uninstall-git-hooks` does uninstall the hooks again*
+## Install pre-commit hooks *in GitBash*
+- Clone `app-server` git repository: https://github.com/dfp-ch/app-server
+- Open GitBash terminal in the `app-server`'s root directory (**ADMIN MODE**)
+- Run the following commands to install dependencies:
+```./scripts/install-git-hooks```
+- Note: `uninstall-git-hooks` does uninstall the hooks again
+- Note: ktlint plugin of IntelliJ IDEA will automatically format even before pre-commit hooks are executed
