@@ -57,6 +57,7 @@ export default [
 	{ text: 'Best Practices', slug: 'development/claude_code/best_practices/docs', key: 'development/claude_code/best_practices/docs' },
 	{ text: 'Memory', slug: 'development/claude_code/memory/docs', key: 'development/claude_code/memory/docs' },
 	{ text: 'Commands', slug: 'development/claude_code/commands/docs', key: 'development/claude_code/commands/docs' },
+	{ text: 'Hooks', slug: 'development/claude_code/hooks/docs', key: 'development/claude_code/hooks/docs' },
 	{ text: 'External: repos', slug: 'development/claude_code/external_repos/docs', key: 'development/claude_code/external_repos/docs' },
 	{ text: 'External: docs', slug: 'development/claude_code/external_docs/docs', key: 'development/claude_code/external_docs/docs' },
 	{ text: 'External: videos', slug: 'development/claude_code/videos', key: 'development/claude_code/videos' },

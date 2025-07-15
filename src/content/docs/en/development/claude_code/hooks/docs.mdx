@@ -1,0 +1,94 @@
+---
+title: Hooks
+i18nReady: false
+---
+
+# Claude Code Hooks
+
+Hooks in Claude Code allow you to execute custom shell commands in response to specific events during your development workflow. This enables powerful automation and integration capabilities.
+
+## Official Documentation
+
+- [Claude Code Hooks - Anthropic Documentation](https://docs.anthropic.com/en/docs/claude-code/hooks)
+
+### Key Features Summary
+
+- **User-defined shell commands** that execute at specific points in Claude Code's lifecycle
+- **Deterministic control** over Claude Code's behavior with full user permissions
+- **Common use cases**: Notifications, automatic code formatting, logging commands, code convention feedback, custom file permissions
+- **Event types**: PreToolUse, PostToolUse, Notification, Stop, SubagentStop, PreCompact
+- **Configuration**: JSON-based with matcher patterns and command hooks
+- **Output methods**: Exit codes (0: success, 2: blocking error) and JSON output for advanced control
+- **Security**: Hooks execute with full user permissions - users responsible for safe configurations
+- **Important**: Always review and understand hook commands before adding to configuration
+
+## Community Documentation
+
+### How I'm Using Claude Code Hooks (Newest Feature) To Fully Automate My Workflow
+
+[Medium Article by Joe Njenga](https://medium.com/@joe.njenga/use-claude-code-hooks-newest-feature-to-fully-automate-your-workflow-341b9400cfbe)
+
+**Key Takeaways:**
+
+- **Hook automation concept**: Claude Code hooks work like triggers that automate development workflow by executing user-defined shell commands at specific lifecycle points
+- **Four main hook types**:
+  - **PreToolUse**: Runs before tool execution (quality control, validation, blocking dangerous operations)
+  - **PostToolUse**: Runs after tool completion (auto-formatting, testing, documentation updates)
+  - **Notification**: Triggered for permission requests or idle periods (custom notifications, Slack integration)
+  - **Stop**: Runs when Claude finishes responding (deployment triggers, CI/CD pipelines)
+- **Practical examples demonstrated**:
+  - **Command logging**: Using jq to log all bash commands to a file
+  - **ESLint validation**: PreToolUse hook that blocks JavaScript file edits if ESLint errors exist
+  - **Documentation generation**: PostToolUse hook that auto-generates docs for API files
+- **Configuration hierarchy**: User settings (global), project settings, local settings, enterprise policies
+- **Setup requirements**: Latest Claude Code version, jq installation, proper script permissions
+- **Security considerations**: Hooks run with full user permissions - validate inputs, use absolute paths, test in safe environments first
+- **Real-world impact**: Transforms Claude Code by embedding user preferences directly into Claude's decision-making process
+
+### How I Use Claude Code Hook to Automate Workflows
+
+[Medium Article by Ajaymaurya](https://medium.com/@ajaymaurya73130/how-i-use-claude-code-hook-to-automate-workflows-56fc55907ab4)
+
+**Key Takeaways:**
+
+- **Core concept**: Claude Code Hook eliminates "forgetfulness" from development process by automating repetitive coding chores (linting, formatting, testing)
+- **Step-by-step automation approach**:
+  - **Step 1**: Started with Python file formatting using `black` and `ruff` on PostToolUse events
+  - **Step 2**: Added automated test running with `pytest` before pushing changes to catch bugs earlier
+  - **Step 3**: Implemented desktop notifications to stay focused during long edits
+  - **Step 4**: Created PreToolUse hooks to block accidental edits to critical files (package-lock.json, config.yaml)
+- **Configuration format**: Uses `.claude/settings.toml` file with event-based matchers and shell commands
+- **Local CI/CD feeling**: Combining multiple hooks creates a local pipeline that ensures consistency without manual intervention
+- **Benefits experienced**:
+  - **Team consistency**: Same rules enforced for everyone
+  - **Time savings**: Eliminates context switching from coding to manual tasks
+  - **Higher code quality**: Automated validation catches issues before pull requests
+  - **Refactoring confidence**: Knowing hooks will validate all changes
+- **Getting started tips**: Start small with one hook, use file matchers wisely, version control settings, mix creative and routine automations
+
+### What is Claude Code Hooks and How to Use It
+
+[Apidog Blog Article by Rebecca Kovács](https://apidog.com/blog/claude-code-hooks/)
+
+**Key Takeaways:**
+
+- **Core problem solved**: Addresses LLM probabilistic nature by providing deterministic control over Claude Code behavior, ensuring critical actions happen every time
+- **Four lifecycle events**:
+  - **PreToolUse**: Before Claude uses a tool (validation, blocking dangerous operations)
+  - **PostToolUse**: After successful tool completion (formatting, testing)
+  - **Notification**: When Claude sends notifications (custom alerts, integrations)
+  - **Stop**: When Claude finishes generating response (cleanup, next steps)
+- **Configuration anatomy**: Uses `.claude/settings.toml` file with detailed hook structure
+- **Hook components**:
+  - **event**: Required field specifying trigger event
+  - **hooks.matcher**: Optional filtering by tool_name, file_paths (glob patterns), query
+  - **command**: Required shell command with environment variables ($CLAUDE_FILE_PATHS, $CLAUDE_TOOL_NAME, etc.)
+  - **run_in_background**: Optional boolean for non-blocking execution
+- **Practical examples demonstrated**:
+  - **Auto-formatting**: ruff + black on Python files after edits
+  - **TDD workflow**: pytest execution on src/test file changes
+  - **Notifications**: Desktop/mobile alerts via ntfy service
+  - **Pre-commit validation**: Custom sanity checks before git commits
+- **Setup and debugging**: Create configuration, verify with `/hooks` command, test commands independently, use echo for variable debugging
+- **Development philosophy**: Bridges AI-driven assistance with rule-based automation for predictable, efficient AI-assisted development
+
